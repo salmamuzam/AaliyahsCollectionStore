@@ -24,3 +24,11 @@ const String AaliyahSignUpTitle = "Register Account";
 const String AaliyahSignUpSubTitle = "Complete your details";
 const String AaliyahFirstName = "First Name";
 const String AaliyahLastName = "Last Name";
+
+// Home App Bar Text
+
+const String AaliyahTitle = "Aaliyah's Collection";
+
+// Checkout Screen App Bar Text
+
+const String AaliyahCheckoutTitle = "Checkout";

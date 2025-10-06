@@ -1,4 +1,5 @@
-import 'package:aaliyahs_collection_estore/src/features/authentication/screens/signup/signup_screen.dart';
+import 'package:aaliyahs_collection_estore/bottom_nav.dart';
+//import 'package:aaliyahs_collection_estore/src/features/shop/product/product_screen.dart';
 import 'package:aaliyahs_collection_estore/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,7 +28,7 @@ class AaliyahApp extends StatelessWidget {
           AaliyahAppTheme.darkTheme.textTheme,
         ),
       ),
-      home: SignupScreen(),
+      home: BottomNavBar(),
     );
   }
 }
