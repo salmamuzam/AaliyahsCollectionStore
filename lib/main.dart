@@ -1,4 +1,4 @@
-import 'package:aaliyahs_collection_estore/src/features/authentication/screens/welcome/welcome_screen.dart';
+import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/login_screen.dart';
 import 'package:aaliyahs_collection_estore/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           AaliyahAppTheme.darkTheme.textTheme,
         ),
       ),
-      home: WelcomeScreen(),
+      home: LoginScreen(),
     );
   }
 }

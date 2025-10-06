@@ -6,4 +6,14 @@ const String AaliyahSignup = "Signup";
 // Welcome Screen Text
 
 const String AaliyahWelcomeTitle = "Aaliyah Collection";
-const String AaliyahWelcomeSubTitle = "Welcome to Aaliyah's Collection, Let's Shop!";
+const String AaliyahWelcomeSubTitle =
+    "Welcome to Aaliyah's Collection, Let's Shop!";
+
+// Login Screen Text
+
+const String AaliyahLoginTitle = "Welcome Back";
+const String AaliyahLoginSubTitle = "Sign in with your email and password";
+const String AaliyahRememberMe = "Remember Me";
+const String AaliyahEmail = "Email";
+const String AaliyahPassword = "Password";
+const String AaliyahForgetPassword = "Forget Password?";
