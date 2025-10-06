@@ -1,20 +1,20 @@
-import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/login_screen.dart';
+import 'package:aaliyahs_collection_estore/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:aaliyahs_collection_estore/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const AaliyahApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AaliyahApp extends StatelessWidget {
+  const AaliyahApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Aaliyah\'s Collection',
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme: AaliyahAppTheme.lightTheme.copyWith(
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           AaliyahAppTheme.darkTheme.textTheme,
         ),
       ),
-      home: LoginScreen(),
+      home: SignupScreen(),
     );
   }
 }

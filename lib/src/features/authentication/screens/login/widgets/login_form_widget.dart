@@ -15,7 +15,7 @@ class LoginForm extends StatelessWidget {
           children: [
             TextFormField(
               decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.person_outline_outlined),
+                prefixIcon: Icon(Icons.email_outlined),
                 labelText: AaliyahEmail,
                 hintText: AaliyahEmail,
                 border: OutlineInputBorder(),

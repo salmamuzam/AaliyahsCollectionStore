@@ -1,7 +1,7 @@
 import 'package:aaliyahs_collection_estore/src/constants/sizes.dart';
-import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/login_footer_widget.dart';
-import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/login_form_widget.dart';
-import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/login_header_widget.dart';
+import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/widgets/login_footer_widget.dart';
+import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/widgets/login_form_widget.dart';
+import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/widgets/login_header_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {

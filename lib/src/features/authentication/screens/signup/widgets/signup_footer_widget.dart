@@ -1,0 +1,24 @@
+import 'package:aaliyahs_collection_estore/src/constants/sizes.dart';
+import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
+import 'package:flutter/material.dart';
+
+class SignUpFooterWidget extends StatelessWidget {
+  const SignUpFooterWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const Text("OR"),
+        SizedBox(height: AaliyahFormHeight - 20),
+        SizedBox(
+          width: double.infinity,
+          child: OutlinedButton(
+            onPressed: () {},
+            child: Text(AaliyahLogin.toUpperCase()),
+          ),
+        ),
+      ],
+    );
+  }
+}

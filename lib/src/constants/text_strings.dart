@@ -17,3 +17,10 @@ const String AaliyahRememberMe = "Remember Me";
 const String AaliyahEmail = "Email";
 const String AaliyahPassword = "Password";
 const String AaliyahForgetPassword = "Forget Password?";
+
+// Sign Up Screen Text
+
+const String AaliyahSignUpTitle = "Register Account";
+const String AaliyahSignUpSubTitle = "Complete your details";
+const String AaliyahFirstName = "First Name";
+const String AaliyahLastName = "Last Name";
