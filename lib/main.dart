@@ -1,5 +1,4 @@
 import 'package:aaliyahs_collection_estore/bottom_nav.dart';
-//import 'package:aaliyahs_collection_estore/src/features/shop/product/product_screen.dart';
 import 'package:aaliyahs_collection_estore/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
