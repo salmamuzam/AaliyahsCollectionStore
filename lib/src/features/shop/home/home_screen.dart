@@ -1,3 +1,4 @@
+import 'package:aaliyahs_collection_estore/src/features/shop/home/widgets/categories.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/home/widgets/custom_app_bar.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/home/widgets/image_slider.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   });
                 },
               ),
+              const SizedBox(height: 20),
+              //Category
+              CategoriesWidget(),
             ],
           ),
         ),

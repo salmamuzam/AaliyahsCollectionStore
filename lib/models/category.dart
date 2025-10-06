@@ -1,25 +1,16 @@
+
+
 class Category {
-  final String id;
   final String title;
   final String image;
-  final int numOfProducts;
 
-  Category({
-    required this.id,
-    required this.title,
-    required this.image,
-    required this.numOfProducts,
-  });
+  Category({required this.title, required this.image});
 }
 
-
-  Category category = Category(
-    id: '1',
-    title: 'Abaya',
-    image: 'abayaCategory.png',
-    numOfProducts: 2,
-  );
-
-  
- 
-
+// ✅ Make the list static so it can be accessed easily
+final List<Category> categories = [
+  Category(title: "Abaya", image: "assets/icons/abaya_category.png"),
+  Category(title: "Dress", image: "assets/icons/dress_category.png"),
+  Category(title: "Hijab", image: "assets/icons/hijab_category.png"),
+  Category(title: "Accessory", image: "assets/icons/accessory_category.png"),
+];

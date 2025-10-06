@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class customAppBar extends StatelessWidget {
-  const customAppBar({
-    super.key,
-  });
+  const customAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +12,7 @@ class customAppBar extends StatelessWidget {
           "Aaliyah's Collection",
           style: TextStyle(
             fontSize: 24, // Adjust this to your desired font size
-            fontWeight:
-                FontWeight.bold, // Optional: makes the text bold
+            fontWeight: FontWeight.bold, // Optional: makes the text bold
           ),
         ),
         IconButton(
