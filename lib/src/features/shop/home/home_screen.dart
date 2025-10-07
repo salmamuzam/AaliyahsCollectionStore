@@ -3,6 +3,7 @@ import 'package:aaliyahs_collection_estore/models/category.dart';
 import 'package:aaliyahs_collection_estore/src/constants/image_strings.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/home/widgets/category_button.dart';
+import 'package:aaliyahs_collection_estore/src/features/shop/home/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -28,6 +29,7 @@ class HomeScreen extends StatelessWidget {
             _topBar(context),
             _title(context),
             _categoriesList(context),
+            _productsGrid(context),
           ],
         ),
       ),
@@ -82,6 +84,22 @@ class HomeScreen extends StatelessWidget {
             child: CategoryButton(category: category, isSelected: index == 0),
           );
         },
+      ),
+    );
+  }
+
+  Widget _productsGrid(BuildContext context) {
+    return Expanded(
+      child: Container(
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemCount: products,
+          itemBuilder: (context, index) {
+            return ProductCard();
+          },
+        ),
       ),
     );
   }

@@ -10,3 +10,102 @@ List<Category> categories = [
 
   Category(name: "Accessory", iconURL: AaliyahAccessoryCategoryIcon),
 ];
+
+List<Product> products = [
+  Product(
+    name: "Closed Olive Abaya",
+    category: "Abaya",
+    price: 26200,
+    description: "Premium Plain Closed Abaya with Pockets",
+    image: AaliyahClosedOliveAbaya
+  ),
+
+  Product(
+    name: "Butterfly Abaya - Desert",
+    category: "Abaya",
+    price: 29100,
+    description: "Premium Closed Butterfly Abaya with Inner Belt",
+    image: AaliyahButterflyDesertAbaya
+  ),
+
+  Product(
+    name: "Linen Abaya - Burgundy",
+    category: "Abaya",
+    price: 22900,
+    description: "Linen Blend Open Abaya with Pockets",
+    image: AaliyahBlendBurgundyAbaya
+  ),
+
+   Product(
+    name: "Jersey Hijab - Pink",
+    category: "Hijab",
+    price: 5500,
+    description: "Cotton Candy Jersey Hijab",
+    image: AaliyahJerseyCottonHijab
+   ),
+
+   Product(
+    name: "Chiffon Hijab - Ice",
+    category: "Hijab",
+    price: 5800,
+    description: "Luxury Crinkle Chiffon Hijab - Ice Blue",
+    image: AaliyahChiffonIceHijab
+  ),
+
+  Product(
+    name: "Viscose Hijab - Shell",
+    category: "Hijab",
+    price: 4200,
+    description: "Lightweight Viscose Hijab - Shell",
+    image: AaliyahViscoseShellHijab
+  ),
+
+   Product(
+    name: "Bloom Dress - Petal",
+    category: "Dress",
+    price: 9290,
+    description: "Petal & Bloom Dress with pastel floral pattern",
+    image: AaliyahBloomPetalDress,
+  ),
+
+  
+   Product(
+    name: "Bloom Dress - View",
+    category: "Dress",
+    price: 7992,
+    description: "Floral Daydream Dress with pastel floral pattern",
+    image: AaliyahBloomViewDress,
+  ),
+
+   Product(
+    name: "Dazed Dress - Sky",
+    category: "Dress",
+    price: 4875,
+    description: "Smock neckline detail with elasticated sleeves with detached belt",
+    image: AaliyahDazedSkyDress,
+  ),
+
+   Product(
+    name: "Hijab Magnet - Gloss",
+    category: "Accessory",
+    price: 1900,
+    description: "Strong magnet, suitable for all hijab fabrics",
+    image: AaliyahMagnetGlossAccessory,
+  ),
+
+  Product(
+    name: "Destiny Chain - Floral",
+    category: "Accessory",
+    price: 1890,
+    description: "Lightweight, stylish, and designed to complement any outfit",
+    image: AaliyahMagnetGlossAccessory,
+  ),
+
+   Product(
+    name: "Chiffon Volumizer - Mustard",
+    category: "Accessory",
+    price: 890,
+    description: "Gentle on the hair and perfectly sized to create a beautiful shape under your hijab",
+    image: AaliyahVolumizerMustardAccessory,
+  ),
+];
