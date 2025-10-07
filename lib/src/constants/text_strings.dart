@@ -25,10 +25,7 @@ const String AaliyahSignUpSubTitle = "Complete your details";
 const String AaliyahFirstName = "First Name";
 const String AaliyahLastName = "Last Name";
 
-// Home App Bar Text
+// Home Screen Text
 
-const String AaliyahTitle = "Aaliyah's Collection";
-
-// Checkout Screen App Bar Text
-
-const String AaliyahCheckoutTitle = "Checkout";
+const String AaliyahTextSpan = "Discover\n";
+const String AaliyahTextSpan2 = "Get the best clothes here";

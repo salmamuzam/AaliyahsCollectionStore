@@ -37,10 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_fonts: ^6.3.2
   provider: ^6.1.5+1
+  carousel_slider: ^5.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -66,6 +68,7 @@ flutter:
     - assets/images/products/
     - assets/images/banners/
     - assets/icons/
+    - assets/images/profile/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

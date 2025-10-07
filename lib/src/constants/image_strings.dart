@@ -17,3 +17,7 @@ const String AaliyahAccessoryCategoryIcon =
 const String AaliyahBannerImage1 = "assets/images/banners/bannerImage1.png";
 const String AaliyahBannerImage2 = "assets/images/banners/bannerImage2.png";
 const String AaliyahBannerImage3 = "assets/images/banners/bannerImage3.png";
+
+// Profile Image
+
+const String AaliyahProfileImage = "assets/images/profile/profile_pic.jpg";

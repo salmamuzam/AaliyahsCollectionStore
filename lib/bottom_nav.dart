@@ -1,4 +1,3 @@
-//import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,10 +12,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
   final screens = [
     HomeScreen(),
-   //ProductScreen(),
-   // CartScreen(),
-   // WishlistScreen(),
-   // ProfileScreen(),
+    //ProductScreen(),
+    // CartScreen(),
+    // WishlistScreen(),
+    // ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) => Scaffold(
