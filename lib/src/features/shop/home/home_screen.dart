@@ -1,9 +1,11 @@
 import 'package:aaliyahs_collection_estore/data/data.dart';
 import 'package:aaliyahs_collection_estore/models/category.dart';
+import 'package:aaliyahs_collection_estore/models/product.dart';
 import 'package:aaliyahs_collection_estore/src/constants/image_strings.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/home/widgets/category_button.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/home/widgets/product_card.dart';
+import 'package:aaliyahs_collection_estore/src/features/shop/product_detail/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -94,10 +96,28 @@ class HomeScreen extends StatelessWidget {
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
+            childAspectRatio: 0.75,
           ),
-          itemCount: products,
+          itemCount: products.length,
           itemBuilder: (context, index) {
-            return ProductCard();
+            Product product = products[index];
+            return ProductCard(
+              product: product,
+              margin: EdgeInsets.symmetric(
+                horizontal: MediaQuery.sizeOf(context).width * 0.02,
+                vertical: MediaQuery.sizeOf(context).height * 0.02,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ProductDetailScreen(product: product);
+                    },
+                  ),
+                );
+              },
+            );
           },
         ),
       ),

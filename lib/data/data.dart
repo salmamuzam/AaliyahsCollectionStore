@@ -1,4 +1,5 @@
 import 'package:aaliyahs_collection_estore/models/category.dart';
+import 'package:aaliyahs_collection_estore/models/product.dart';
 import 'package:aaliyahs_collection_estore/src/constants/image_strings.dart';
 
 List<Category> categories = [
@@ -17,7 +18,7 @@ List<Product> products = [
     category: "Abaya",
     price: 26200,
     description: "Premium Plain Closed Abaya with Pockets",
-    image: AaliyahClosedOliveAbaya
+    image: AaliyahAbayaImage1,
   ),
 
   Product(
@@ -25,7 +26,7 @@ List<Product> products = [
     category: "Abaya",
     price: 29100,
     description: "Premium Closed Butterfly Abaya with Inner Belt",
-    image: AaliyahButterflyDesertAbaya
+    image: AaliyahAbayaImage2,
   ),
 
   Product(
@@ -33,7 +34,7 @@ List<Product> products = [
     category: "Abaya",
     price: 22900,
     description: "Linen Blend Open Abaya with Pockets",
-    image: AaliyahBlendBurgundyAbaya
+    image: AaliyahAbayaImage3,
   ),
 
    Product(
@@ -41,7 +42,7 @@ List<Product> products = [
     category: "Hijab",
     price: 5500,
     description: "Cotton Candy Jersey Hijab",
-    image: AaliyahJerseyCottonHijab
+    image: AaliyahHijabImage1,
    ),
 
    Product(
@@ -49,7 +50,7 @@ List<Product> products = [
     category: "Hijab",
     price: 5800,
     description: "Luxury Crinkle Chiffon Hijab - Ice Blue",
-    image: AaliyahChiffonIceHijab
+    image: AaliyahHijabImage2,
   ),
 
   Product(
@@ -57,7 +58,7 @@ List<Product> products = [
     category: "Hijab",
     price: 4200,
     description: "Lightweight Viscose Hijab - Shell",
-    image: AaliyahViscoseShellHijab
+    image: AaliyahHijabImage3,
   ),
 
    Product(
@@ -65,7 +66,7 @@ List<Product> products = [
     category: "Dress",
     price: 9290,
     description: "Petal & Bloom Dress with pastel floral pattern",
-    image: AaliyahBloomPetalDress,
+    image: AaliyahDressImage1,
   ),
 
   
@@ -74,7 +75,7 @@ List<Product> products = [
     category: "Dress",
     price: 7992,
     description: "Floral Daydream Dress with pastel floral pattern",
-    image: AaliyahBloomViewDress,
+    image: AaliyahDressImage2,
   ),
 
    Product(
@@ -82,7 +83,7 @@ List<Product> products = [
     category: "Dress",
     price: 4875,
     description: "Smock neckline detail with elasticated sleeves with detached belt",
-    image: AaliyahDazedSkyDress,
+    image: AaliyahDressImage3,
   ),
 
    Product(
@@ -90,7 +91,7 @@ List<Product> products = [
     category: "Accessory",
     price: 1900,
     description: "Strong magnet, suitable for all hijab fabrics",
-    image: AaliyahMagnetGlossAccessory,
+    image: AaliyahAccessoryImage1,
   ),
 
   Product(
@@ -98,7 +99,7 @@ List<Product> products = [
     category: "Accessory",
     price: 1890,
     description: "Lightweight, stylish, and designed to complement any outfit",
-    image: AaliyahMagnetGlossAccessory,
+    image: AaliyahAccessoryImage2,
   ),
 
    Product(
@@ -106,6 +107,6 @@ List<Product> products = [
     category: "Accessory",
     price: 890,
     description: "Gentle on the hair and perfectly sized to create a beautiful shape under your hijab",
-    image: AaliyahVolumizerMustardAccessory,
+    image: AaliyahAccessoryImage3,
   ),
 ];
