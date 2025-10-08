@@ -18,7 +18,7 @@ List<Product> products = [
     category: "Abaya",
     price: 26200,
     description: "Premium Plain Closed Abaya with Pockets",
-    image: AaliyahAbayaImage1,
+    image: AaliyahAbayaImage3,
   ),
 
   Product(
@@ -34,7 +34,7 @@ List<Product> products = [
     category: "Abaya",
     price: 22900,
     description: "Linen Blend Open Abaya with Pockets",
-    image: AaliyahAbayaImage3,
+    image: AaliyahAbayaImage1,
   ),
 
    Product(
@@ -42,7 +42,7 @@ List<Product> products = [
     category: "Hijab",
     price: 5500,
     description: "Cotton Candy Jersey Hijab",
-    image: AaliyahHijabImage1,
+    image: AaliyahHijabImage2,
    ),
 
    Product(
@@ -50,7 +50,7 @@ List<Product> products = [
     category: "Hijab",
     price: 5800,
     description: "Luxury Crinkle Chiffon Hijab - Ice Blue",
-    image: AaliyahHijabImage2,
+    image: AaliyahHijabImage1,
   ),
 
   Product(
@@ -91,7 +91,7 @@ List<Product> products = [
     category: "Accessory",
     price: 1900,
     description: "Strong magnet, suitable for all hijab fabrics",
-    image: AaliyahAccessoryImage1,
+    image: AaliyahAccessoryImage2,
   ),
 
   Product(
@@ -99,7 +99,7 @@ List<Product> products = [
     category: "Accessory",
     price: 1890,
     description: "Lightweight, stylish, and designed to complement any outfit",
-    image: AaliyahAccessoryImage2,
+    image: AaliyahAccessoryImage1,
   ),
 
    Product(

@@ -29,3 +29,7 @@ const String AaliyahLastName = "Last Name";
 
 const String AaliyahTextSpan = "Discover\n";
 const String AaliyahTextSpan2 = "Get the best clothes here";
+
+// Add to Bag Button
+
+const String AaliyahAddBagBtn = "  Add to Bag";
