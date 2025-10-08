@@ -37,3 +37,9 @@ const String AaliyahAddBagBtn = "  Add to Bag";
 // Cart Screen Text
 
 const String AaliyahCartTitle = "My Cart";
+
+// Check Out Box Text
+
+const String AaliyahSubTotal = "Subtotal";
+const String AaliyahTotal = "Total";
+const String AaliyahCheckOut = "Checkout";

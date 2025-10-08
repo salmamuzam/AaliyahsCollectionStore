@@ -1,6 +1,7 @@
 import 'package:aaliyahs_collection_estore/provider/cart_provider.dart';
+import 'package:aaliyahs_collection_estore/provider/favorite_provider.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/cart/cart_screen.dart';
-import 'package:aaliyahs_collection_estore/src/features/shop/home/home_screen.dart';
+//import 'package:aaliyahs_collection_estore/src/features/shop/home/home_screen.dart';
 import 'package:aaliyahs_collection_estore/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +16,8 @@ class AaliyahApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MultiProvider(providers: [
-ChangeNotifierProvider(create: (_) => CartProvider(),)
+ChangeNotifierProvider(create: (_) => CartProvider()),
+ChangeNotifierProvider(create: (_) => FavoriteProvider()),
   ],
   
   child: MaterialApp(
