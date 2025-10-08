@@ -1,4 +1,5 @@
 import 'package:aaliyahs_collection_estore/src/features/shop/cart/cart_screen.dart';
+import 'package:aaliyahs_collection_estore/src/features/shop/favorites/favorites.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
   final screens = [
     HomeScreen(),
-    // FavoritesScreen(),
+  FavoriteScreen(),
     CartScreen(),
     // ProfileScreen(),
   ];
@@ -22,7 +23,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     body: screens[index],
     bottomNavigationBar: NavigationBarTheme(
       data: NavigationBarThemeData(
-        labelTextStyle: MaterialStateProperty.all(
+        labelTextStyle: WidgetStatePropertyAll(
           TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
         ),
       ),
@@ -39,9 +40,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: "Home",
           ),
           NavigationDestination(
-            icon: Icon(Icons.store_outlined),
+            icon: Icon(Icons.favorite_outline_outlined),
             selectedIcon: Icon(Icons.favorite),
-            label: "Favorites",
+            label: "Wishlist",
           ),
           NavigationDestination(
             icon: Icon(Icons.shopping_cart_outlined),

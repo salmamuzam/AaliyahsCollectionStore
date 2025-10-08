@@ -1,4 +1,5 @@
 import 'package:aaliyahs_collection_estore/models/product.dart';
+import 'package:aaliyahs_collection_estore/provider/favorite_provider.dart';
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final brightness = MediaQuery.platformBrightnessOf(context);
     final isDarkMode = brightness == Brightness.dark;
     return GestureDetector(
@@ -64,25 +66,36 @@ class ProductCard extends StatelessWidget {
   }
 
   Widget _pricingInformation(BuildContext context) {
+        final provider = FavoriteProvider.of(context);
     final brightness = MediaQuery.platformBrightnessOf(context);
     final isDarkMode = brightness == Brightness.dark;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
       children: [
         Text(
-          "\Rs.${product.price.toString()}",
+          "Rs. ${product.price.toString()}",
           style: TextStyle(
             color: isDarkMode ? AaliyahDarkColor : AaliyahDarkColor,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
-        Icon(
-          Icons.favorite_outline,
-          color: isDarkMode ? AaliyahDarkColor : AaliyahDarkColor,
+        GestureDetector(
+          onTap: () {
+            provider.toggleFavorite(product);
+          },
+          
+          child: Icon(
+            provider.isExist(product)?
+            Icons.favorite:
+            Icons.favorite_outline,
+            color: isDarkMode ? AaliyahDarkColor : AaliyahDarkColor,
+            size: 22,
+          ),
         ),
       ],
     );
   }
 }
+

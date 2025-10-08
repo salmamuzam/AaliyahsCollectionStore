@@ -1,5 +1,7 @@
 //import 'package:aaliyahs_collection_estore/data/data.dart';
+import 'package:aaliyahs_collection_estore/data/data.dart';
 import 'package:aaliyahs_collection_estore/models/product.dart';
+import 'package:aaliyahs_collection_estore/provider/favorite_provider.dart';
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/product_detail/widgets/add_button.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +26,18 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   }
 
   PreferredSizeWidget _appBar() {
+    final provider = FavoriteProvider.of(context);
     return AppBar(
       scrolledUnderElevation: 0,
       actions: [
-        IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_outline)),
+        IconButton(
+          onPressed: () {
+            provider.toggleFavorite(widget.product);
+          },
+          icon:  Icon(
+          provider.isExist(widget.product)?
+        Icons.favorite : Icons.favorite_outline, size: 25),
+        ),
       ],
     );
   }
@@ -139,7 +149,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       ),
       child: AddButton(
         width: MediaQuery.sizeOf(context).width * 0.8,
-        height: MediaQuery.sizeOf(context).height * 0.05, product: widget.product,
+        height: MediaQuery.sizeOf(context).height * 0.05,
+        product: widget.product,
       ),
     );
   }
