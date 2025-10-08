@@ -1,7 +1,7 @@
 //import 'package:aaliyahs_collection_estore/data/data.dart';
 import 'package:aaliyahs_collection_estore/models/product.dart';
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
-import 'package:aaliyahs_collection_estore/src/features/shop/product_detail/add_button.dart';
+import 'package:aaliyahs_collection_estore/src/features/shop/product_detail/widgets/add_button.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailScreen extends StatefulWidget {
