@@ -19,6 +19,7 @@ List<Product> products = [
     price: 26200,
     description: "Premium Plain Closed Abaya with Pockets",
     image: AaliyahAbayaImage3,
+    quantity: 10,
   ),
 
   Product(
@@ -27,6 +28,7 @@ List<Product> products = [
     price: 29100,
     description: "Premium Closed Butterfly Abaya with Inner Belt",
     image: AaliyahAbayaImage2,
+    quantity: 8,
   ),
 
   Product(
@@ -35,22 +37,25 @@ List<Product> products = [
     price: 22900,
     description: "Linen Blend Open Abaya with Pockets",
     image: AaliyahAbayaImage1,
+    quantity: 12,
   ),
 
-   Product(
+  Product(
     name: "Jersey Hijab - Pink",
     category: "Hijab",
     price: 5500,
     description: "Cotton Candy Jersey Hijab",
     image: AaliyahHijabImage2,
-   ),
+    quantity: 25,
+  ),
 
-   Product(
+  Product(
     name: "Chiffon Hijab - Ice",
     category: "Hijab",
     price: 5800,
     description: "Luxury Crinkle Chiffon Hijab - Ice Blue",
     image: AaliyahHijabImage1,
+    quantity: 30,
   ),
 
   Product(
@@ -59,39 +64,43 @@ List<Product> products = [
     price: 4200,
     description: "Lightweight Viscose Hijab - Shell",
     image: AaliyahHijabImage3,
+    quantity: 20,
   ),
 
-   Product(
+  Product(
     name: "Bloom Dress - Petal",
     category: "Dress",
     price: 9290,
     description: "Petal & Bloom Dress with pastel floral pattern",
     image: AaliyahDressImage1,
+    quantity: 7,
   ),
 
-  
-   Product(
+  Product(
     name: "Bloom Dress - View",
     category: "Dress",
     price: 7992,
     description: "Floral Daydream Dress with pastel floral pattern",
     image: AaliyahDressImage2,
+    quantity: 9,
   ),
 
-   Product(
+  Product(
     name: "Dazed Dress - Sky",
     category: "Dress",
     price: 4875,
     description: "Smock neckline detail with elasticated sleeves with detached belt",
     image: AaliyahDressImage3,
+    quantity: 15,
   ),
 
-   Product(
+  Product(
     name: "Hijab Magnet - Gloss",
     category: "Accessory",
     price: 1900,
     description: "Strong magnet, suitable for all hijab fabrics",
     image: AaliyahAccessoryImage2,
+    quantity: 40,
   ),
 
   Product(
@@ -100,13 +109,15 @@ List<Product> products = [
     price: 1890,
     description: "Lightweight, stylish, and designed to complement any outfit",
     image: AaliyahAccessoryImage1,
+    quantity: 25,
   ),
 
-   Product(
+  Product(
     name: "Chiffon Volumizer - Mustard",
     category: "Accessory",
     price: 890,
     description: "Gentle on the hair and perfectly sized to create a beautiful shape under your hijab",
     image: AaliyahAccessoryImage3,
+    quantity: 35,
   ),
 ];

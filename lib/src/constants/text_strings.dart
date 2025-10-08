@@ -33,3 +33,7 @@ const String AaliyahTextSpan2 = "Get the best clothes here";
 // Add to Bag Button
 
 const String AaliyahAddBagBtn = "  Add to Bag";
+
+// Cart Screen Text
+
+const String AaliyahCartTitle = "My Cart";

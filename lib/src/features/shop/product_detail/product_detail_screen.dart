@@ -139,7 +139,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       ),
       child: AddButton(
         width: MediaQuery.sizeOf(context).width * 0.8,
-        height: MediaQuery.sizeOf(context).height * 0.05,
+        height: MediaQuery.sizeOf(context).height * 0.05, product: widget.product,
       ),
     );
   }

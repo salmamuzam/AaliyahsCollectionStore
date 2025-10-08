@@ -1,3 +1,4 @@
+import 'package:aaliyahs_collection_estore/src/features/shop/cart/cart_screen.dart';
 import 'package:aaliyahs_collection_estore/src/features/shop/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +13,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
   final screens = [
     HomeScreen(),
-    //ProductScreen(),
-    // CartScreen(),
-    // WishlistScreen(),
+    // FavoritesScreen(),
+    CartScreen(),
     // ProfileScreen(),
   ];
   @override
@@ -40,8 +40,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           NavigationDestination(
             icon: Icon(Icons.store_outlined),
-            selectedIcon: Icon(Icons.store),
-            label: "Shop",
+            selectedIcon: Icon(Icons.favorite),
+            label: "Favorites",
           ),
           NavigationDestination(
             icon: Icon(Icons.shopping_cart_outlined),
