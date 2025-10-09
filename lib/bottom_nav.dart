@@ -1,7 +1,6 @@
 import 'package:aaliyahs_collection_estore/src/features/core/screens/cart/cart_screen.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/favorites/favorites.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/home/home_screen.dart';
-import 'package:aaliyahs_collection_estore/src/features/core/screens/product/product_screen.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +15,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
   final screens = [
     HomeScreen(),
-    ProductScreen(),
     FavoriteScreen(),
     CartScreen(),
     ProfileScreen(),
@@ -42,11 +40,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             selectedIcon: Icon(Icons.home),
             label: "Home",
           ),
-            NavigationDestination(
-            icon: Icon(Icons.store_outlined),
-            selectedIcon: Icon(Icons.store),
-            label: "Shop",
-          ),
+            
           NavigationDestination(
             icon: Icon(Icons.favorite_outline_outlined),
             selectedIcon: Icon(Icons.favorite),

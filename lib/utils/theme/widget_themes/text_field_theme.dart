@@ -8,20 +8,20 @@ class AaliyahTextFormFieldTheme {
 
   static InputDecorationTheme lightInputDecorationTheme =
       InputDecorationTheme(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
+        border: OutlineInputBorder(),
         prefixIconColor: AaliyahPrimaryColor,
         floatingLabelStyle: TextStyle(color: AaliyahPrimaryColor),
-        focusedBorder: OutlineInputBorder( borderRadius: BorderRadius.circular(100),
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 2, color: AaliyahPrimaryColor),
         ),
       );
 
   static InputDecorationTheme darkInputDecorationTheme =
       InputDecorationTheme(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
+        border: OutlineInputBorder(),
         prefixIconColor: AaliyahSecondaryColor,
         floatingLabelStyle: TextStyle(color: AaliyahSecondaryColor),
-        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100),
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 2, color: AaliyahSecondaryColor),
         ),
       );

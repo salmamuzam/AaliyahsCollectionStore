@@ -1,5 +1,6 @@
 import 'package:aaliyahs_collection_estore/src/constants/sizes.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
+import 'package:aaliyahs_collection_estore/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginFooterWidget extends StatelessWidget {
@@ -17,8 +18,14 @@ class LoginFooterWidget extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: OutlinedButton(
-            onPressed: () {},
-            child: Text(AaliyahSignup.toUpperCase()),
+            onPressed: () {
+                 Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignupScreen()),
+                      );
+            },
+            child: Text(AaliyahSignup.toUpperCase(), style: TextStyle(
+                      fontWeight: FontWeight.bold)),
           ),
         ),
       ],

@@ -2,6 +2,8 @@ import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:aaliyahs_collection_estore/src/constants/image_strings.dart';
 import 'package:aaliyahs_collection_estore/src/constants/sizes.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
+import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/login_screen.dart';
+import 'package:aaliyahs_collection_estore/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -32,6 +34,7 @@ class WelcomeScreen extends StatelessWidget {
                 Text(
                   AaliyahWelcomeTitle,
                   style: Theme.of(context).textTheme.headlineLarge,
+                  
                 ),
                 Text(
                   AaliyahWelcomeSubTitle,
@@ -47,17 +50,31 @@ class WelcomeScreen extends StatelessWidget {
                 // Login and Signup Buttons
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: () {},
-                    child: Text(AaliyahLogin.toUpperCase()),
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const LoginScreen()),
+                      );
+                    },
+                    child: Text(AaliyahLogin.toUpperCase(), style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    )),
                   ),
                 ),
                 SizedBox(width: 10),
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(AaliyahSignup.toUpperCase()),
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignupScreen()),
+                      );
+                    },
+                    child: Text(AaliyahSignup.toUpperCase(), style: TextStyle(
+                      fontWeight: FontWeight.bold)
                   ),
                 ),
+                )
               ],
             ),
           ],
