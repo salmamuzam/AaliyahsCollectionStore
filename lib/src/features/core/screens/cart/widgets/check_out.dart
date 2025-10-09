@@ -1,4 +1,4 @@
-import 'package:aaliyahs_collection_estore/provider/cart_provider.dart';
+ import 'package:aaliyahs_collection_estore/provider/cart_provider.dart';
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -9,12 +9,13 @@ class CheckOutBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       var mediaQuery = MediaQuery.of(context);
+      var screenWidth = MediaQuery.of(context).size.width;
     var brightness = mediaQuery.platformBrightness;
     final isDarkMode = brightness == Brightness.dark;
     final provider = CartProvider.of(context);
     return Container(
-      height: 300,
-      width: double.infinity,
+      width: screenWidth,
+     
       decoration: BoxDecoration(
         color: isDarkMode ? AaliyahSecondaryColor : AaliyahPrimaryColor,
         borderRadius: BorderRadius.only(
@@ -25,6 +26,7 @@ class CheckOutBox extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+           mainAxisSize: MainAxisSize.min,
         children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

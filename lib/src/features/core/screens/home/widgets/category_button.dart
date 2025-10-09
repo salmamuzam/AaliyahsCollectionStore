@@ -17,8 +17,6 @@ class CategoryButton extends StatelessWidget {
     final brightness = MediaQuery.platformBrightnessOf(context);
     final isDarkMode = brightness == Brightness.dark;
 
-    double iconSize = MediaQuery.sizeOf(context).width * 0.05;
-
     // Background color
     final backgroundColor = isDarkMode
         ? (isSelected ? AaliyahPrimaryColor : AaliyahSecondaryColor)
@@ -33,25 +31,40 @@ class CategoryButton extends StatelessWidget {
     final borderColor = isDarkMode ? Colors.white : Colors.black;
 
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: MediaQuery.sizeOf(context).width * 0.03,
-      ),
+      margin: const EdgeInsets.symmetric(horizontal: 1),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: borderColor),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: borderColor, width: 1),
         color: backgroundColor,
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            height: iconSize,
-            width: iconSize,
-            margin: const EdgeInsets.only(right: 10),
-            child: Image.asset(category.iconURL),
-          ),
-          Text(category.name, style: TextStyle(color: textColor)),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center, // Center horizontally
+          crossAxisAlignment: CrossAxisAlignment.center, // Center vertically
+          mainAxisSize: MainAxisSize.min, // Take only needed space
+          children: [
+            // Icon
+            Container(
+              height: 20,
+              width: 15,
+             margin: const EdgeInsets.only(right: 2),
+              child: Image.asset(
+                category.iconURL,
+                fit: BoxFit.contain,
+              ),
+            ),
+            // Text
+            Text(
+              category.name,
+              style: TextStyle(
+                color: textColor,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

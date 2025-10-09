@@ -2,7 +2,8 @@ import 'package:aaliyahs_collection_estore/src/features/core/models/product.dart
 import 'package:aaliyahs_collection_estore/src/constants/image_strings.dart';
 
 List<Product> products = [
-  Product(
+
+Product(
     name: "Closed Olive Abaya",
     category: "Abaya",
     price: 26200,
@@ -110,3 +111,17 @@ List<Product> products = [
     quantity: 35,
   ),
 ];
+
+// Best Selling Products
+
+List<Product> bestSellingProducts = [
+  products[0], 
+  products[3], 
+  products[6], 
+  products[9], 
+];
+
+
+List<Product> getProductsByCategory(String category) {
+  return products.where((product) => product.category == category).toList();
+}

@@ -1,101 +1,79 @@
+//import 'package:aaliyahs_collection_estore/repository/product_repository.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/models/product.dart';
 import 'package:aaliyahs_collection_estore/provider/favorite_provider.dart';
-import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
-import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
-  final EdgeInsets margin;
-  final Function onTap;
+  final VoidCallback onPress;
 
-  const ProductCard({
-    super.key,
-    required this.product,
-    this.margin = const EdgeInsets.only(),
-    required this.onTap,
-  });
+  const ProductCard({super.key, required this.product, required this.onPress});
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<FavoriteProvider>(context);
+    final isDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
 
-    final brightness = MediaQuery.platformBrightnessOf(context);
-    final isDarkMode = brightness == Brightness.dark;
     return GestureDetector(
-      onTap: () => onTap(),
-      child: Container(
-        margin: margin,
-        padding: EdgeInsets.symmetric(
-          vertical: MediaQuery.sizeOf(context).height * 0.01,
-          horizontal: MediaQuery.sizeOf(context).width * 0.03,
-        ),
-        decoration: BoxDecoration(
-          color: isDarkMode ? AaliyahDarkColor : AaliyahLightColor,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: isDarkMode ? AaliyahDarkColor : AaliyahLightColor,
-              spreadRadius: 1,
-              blurRadius: 10,
-            ),
-          ],
-          image: DecorationImage(
-            fit: BoxFit.contain,
-            image: AssetImage(product.image),
-          ),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _pricingInformation(context),
-            Text(
-              product.name,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: isDarkMode ? AaliyahDarkColor : AaliyahLightColor,
-                fontWeight: FontWeight.w900,
-                backgroundColor: isDarkMode
-                    ? AaliyahSecondaryColor
-                    : AaliyahPrimaryColor,
+      onTap: onPress,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xFFE3E3E3),
+                borderRadius: BorderRadius.circular(15),
               ),
+              child: Image.asset(product.image, fit: BoxFit.contain),
             ),
-          ],
-        ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            product.name,
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: 4),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Rs. ${product.price}",
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+              ),
+              InkWell(
+                borderRadius: BorderRadius.circular(30),
+                onTap: () {
+                  provider.toggleFavorite(product);
+                },
+                child: Container(
+                  height: 24,
+                  width: 24,
+                  child: Icon(
+                    provider.isExist(product)
+                        ? Icons.favorite
+                        : Icons.favorite_outline,
+                    color: provider.isExist(product)
+                        ? Colors.red
+                        : (isDarkMode ? Colors.white : Colors.black),
+                    size: 20,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
-
-  Widget _pricingInformation(BuildContext context) {
-        final provider = FavoriteProvider.of(context);
-    final brightness = MediaQuery.platformBrightnessOf(context);
-    final isDarkMode = brightness == Brightness.dark;
-
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          "Rs. ${product.price.toString()}",
-          style: TextStyle(
-            color: isDarkMode ? AaliyahDarkColor : AaliyahDarkColor,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            provider.toggleFavorite(product);
-          },
-          
-          child: Icon(
-            provider.isExist(product)?
-            Icons.favorite:
-            Icons.favorite_outline,
-            color: isDarkMode ? AaliyahDarkColor : AaliyahDarkColor,
-            size: 22,
-          ),
-        ),
-      ],
-    );
-  }
 }
-

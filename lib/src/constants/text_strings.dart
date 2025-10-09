@@ -29,10 +29,15 @@ const String AaliyahLastName = "Last Name";
 
 const String AaliyahTextSpan = "Discover\n";
 const String AaliyahTextSpan2 = "Get the best clothes here";
+const String AaliyahBestSellingTitle = "Best Selling Products";
 
 // Add to Bag Button
 
 const String AaliyahAddBagBtn = "  Add to Bag";
+
+// Product Screen Text
+
+const String AaliyahProductText = "Products";
 
 // Cart Screen Text
 
@@ -52,5 +57,12 @@ const String AaliyahFavoriteText = "Wishlist";
 
 const String AaliyahProfileText = "Profile";
 const String AaliyahEditProfileText = "Edit Profile";
-const String AaliyahSignOut = "Sign Out";
+const String AaliyahSignOut = "Log Out";
 const String AaliyahDelete = "Delete";
+
+// Profile Information
+
+const String AaliyahProfileFname = "Fathima";
+const String AaliyahProfileLname = "Aaliyah";
+const String AaliyahProfileEmail = "aaliyah@gmail.com";
+const String AaliyahProfilePassword = "Aaliyah2015*";
