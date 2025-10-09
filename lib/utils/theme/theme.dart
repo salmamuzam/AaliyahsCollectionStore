@@ -1,7 +1,7 @@
-import 'package:aaliyahs_collection_estore/src/utils/theme/widget_themes/elevated_button_theme.dart';
-import 'package:aaliyahs_collection_estore/src/utils/theme/widget_themes/outlined_button_theme.dart';
-import 'package:aaliyahs_collection_estore/src/utils/theme/widget_themes/text_field_theme.dart';
-import 'package:aaliyahs_collection_estore/src/utils/theme/widget_themes/text_theme.dart';
+import 'package:aaliyahs_collection_estore/utils/theme/widget_themes/elevated_button_theme.dart';
+import 'package:aaliyahs_collection_estore/utils/theme/widget_themes/outlined_button_theme.dart';
+import 'package:aaliyahs_collection_estore/utils/theme/widget_themes/text_field_theme.dart';
+import 'package:aaliyahs_collection_estore/utils/theme/widget_themes/text_theme.dart';
 import 'package:flutter/material.dart';
 
 class AaliyahAppTheme {

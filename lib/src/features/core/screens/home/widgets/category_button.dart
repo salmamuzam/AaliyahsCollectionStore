@@ -1,4 +1,4 @@
-import 'package:aaliyahs_collection_estore/models/category.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/models/category.dart';
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 

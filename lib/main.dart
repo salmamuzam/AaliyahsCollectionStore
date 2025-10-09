@@ -1,8 +1,7 @@
+import 'package:aaliyahs_collection_estore/bottom_nav.dart';
 import 'package:aaliyahs_collection_estore/provider/cart_provider.dart';
 import 'package:aaliyahs_collection_estore/provider/favorite_provider.dart';
-import 'package:aaliyahs_collection_estore/src/features/shop/cart/cart_screen.dart';
-//import 'package:aaliyahs_collection_estore/src/features/shop/home/home_screen.dart';
-import 'package:aaliyahs_collection_estore/src/utils/theme/theme.dart';
+import 'package:aaliyahs_collection_estore/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -35,7 +34,7 @@ ChangeNotifierProvider(create: (_) => FavoriteProvider()),
         AaliyahAppTheme.darkTheme.textTheme,
       ),
     ),
-    home: CartScreen(),
+    home: BottomNavBar(),
   )
   
   );

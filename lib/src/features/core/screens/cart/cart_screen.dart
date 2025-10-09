@@ -2,7 +2,7 @@ import 'package:aaliyahs_collection_estore/bottom_nav.dart';
 import 'package:aaliyahs_collection_estore/provider/cart_provider.dart';
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
-import 'package:aaliyahs_collection_estore/src/features/shop/cart/widgets/check_out.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/cart/widgets/check_out.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatefulWidget {

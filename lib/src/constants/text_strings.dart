@@ -47,3 +47,10 @@ const String AaliyahCheckOut = "Checkout";
 // Favorite Text
 
 const String AaliyahFavoriteText = "Wishlist";
+
+// Profile Screen Text
+
+const String AaliyahProfileText = "Profile";
+const String AaliyahEditProfileText = "Edit Profile";
+const String AaliyahSignOut = "Sign Out";
+const String AaliyahDelete = "Delete";

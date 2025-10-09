@@ -1,11 +1,13 @@
-import 'package:aaliyahs_collection_estore/data/data.dart';
-import 'package:aaliyahs_collection_estore/models/category.dart';
-import 'package:aaliyahs_collection_estore/models/product.dart';
+
+import 'package:aaliyahs_collection_estore/repository/category_repository.dart';
+import 'package:aaliyahs_collection_estore/repository/product_repository.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/models/category.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/models/product.dart';
 import 'package:aaliyahs_collection_estore/src/constants/image_strings.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
-import 'package:aaliyahs_collection_estore/src/features/shop/home/widgets/category_button.dart';
-import 'package:aaliyahs_collection_estore/src/features/shop/home/widgets/product_card.dart';
-import 'package:aaliyahs_collection_estore/src/features/shop/product_detail/product_detail_screen.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/home/widgets/category_button.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/home/widgets/product_card.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/product_detail/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -71,6 +73,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _categoriesList(BuildContext context) {
+    //List<List<Product>> selectedCategories = [];
     return Container(
       height: MediaQuery.sizeOf(context).height * 0.05,
       margin: EdgeInsets.symmetric(

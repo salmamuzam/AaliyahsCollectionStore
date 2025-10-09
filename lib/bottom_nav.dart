@@ -1,6 +1,7 @@
-import 'package:aaliyahs_collection_estore/src/features/shop/cart/cart_screen.dart';
-import 'package:aaliyahs_collection_estore/src/features/shop/favorites/favorites.dart';
-import 'package:aaliyahs_collection_estore/src/features/shop/home/home_screen.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/cart/cart_screen.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/favorites/favorites.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/home/home_screen.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -14,9 +15,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
   final screens = [
     HomeScreen(),
-  FavoriteScreen(),
+    FavoriteScreen(),
     CartScreen(),
-    // ProfileScreen(),
+    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) => Scaffold(

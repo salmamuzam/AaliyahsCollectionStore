@@ -1,4 +1,4 @@
-import 'package:aaliyahs_collection_estore/models/product.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/models/product.dart';
 import 'package:aaliyahs_collection_estore/provider/cart_provider.dart';
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';

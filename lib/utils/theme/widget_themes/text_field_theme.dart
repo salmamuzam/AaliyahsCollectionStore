@@ -7,21 +7,21 @@ class AaliyahTextFormFieldTheme {
   AaliyahTextFormFieldTheme._();
 
   static InputDecorationTheme lightInputDecorationTheme =
-      const InputDecorationTheme(
-        border: OutlineInputBorder(),
+      InputDecorationTheme(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
         prefixIconColor: AaliyahPrimaryColor,
         floatingLabelStyle: TextStyle(color: AaliyahPrimaryColor),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: OutlineInputBorder( borderRadius: BorderRadius.circular(100),
           borderSide: BorderSide(width: 2, color: AaliyahPrimaryColor),
         ),
       );
 
   static InputDecorationTheme darkInputDecorationTheme =
-      const InputDecorationTheme(
-        border: OutlineInputBorder(),
+      InputDecorationTheme(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
         prefixIconColor: AaliyahSecondaryColor,
         floatingLabelStyle: TextStyle(color: AaliyahSecondaryColor),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100),
           borderSide: BorderSide(width: 2, color: AaliyahSecondaryColor),
         ),
       );
