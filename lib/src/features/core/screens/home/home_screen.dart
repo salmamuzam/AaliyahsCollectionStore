@@ -5,7 +5,10 @@ import 'package:aaliyahs_collection_estore/src/constants/image_strings.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/home/widgets/category_button.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/home/widgets/product_card.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/product/product_screen.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/product_detail/product_detail_screen.dart';
+//import 'package:aaliyahs_collection_estore/src/features/core/screens/product_screen.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/profile/profile_screen.dart'; // Import ProfileScreen
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -19,7 +22,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildUI(BuildContext context) {
     return SafeArea(
-      child: SingleChildScrollView( // Wrap entire content with SingleChildScrollView
+      child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Column(
@@ -35,7 +38,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 16),
               _bestSellingTitle(context),
               const SizedBox(height: 16),
-              _productsGrid(context), // This is no longer Expanded
+              _productsGrid(context),
             ],
           ),
         ),
@@ -54,9 +57,20 @@ class HomeScreen extends StatelessWidget {
               .headlineLarge
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
-        const CircleAvatar(
-          radius: 30,
-          backgroundImage: AssetImage(AaliyahProfileImage),
+        GestureDetector(
+          onTap: () {
+            // Navigate to ProfileScreen when profile image is tapped
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProfileScreen(),
+              ),
+            );
+          },
+          child: const CircleAvatar(
+            radius: 30,
+            backgroundImage: AssetImage(AaliyahProfileImage),
+          ),
         ),
       ],
     );
@@ -91,6 +105,17 @@ class HomeScreen extends StatelessWidget {
               child: CategoryButton(
                 category: category, 
                 isSelected: index == 0,
+                onTap: () {
+                  // Navigate to ProductScreen with the selected category
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductScreen(
+                        initialCategory: category.name,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           );
@@ -99,7 +124,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Banner Carousel with full width and responsive height
   Widget _bannerCarousel(BuildContext context) {
     final List<String> bannerImages = [
       AaliyahBannerImage1,
@@ -109,16 +133,13 @@ class HomeScreen extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        // Responsive height based on screen size
-        double carouselHeight = constraints.maxWidth < 600 
-            ? 150  // Mobile height
-            : 370.5; // Desktop height - increased for better proportion
+        double carouselHeight = constraints.maxWidth < 600 ? 150 : 370.5;
 
         return CarouselSlider(
           options: CarouselOptions(
             height: carouselHeight,
             aspectRatio: 16/9,
-            viewportFraction: 1.0, // Full width for both mobile and desktop
+            viewportFraction: 1.0,
             initialPage: 0,
             enableInfiniteScroll: true,
             reverse: false,
@@ -126,7 +147,7 @@ class HomeScreen extends StatelessWidget {
             autoPlayInterval: const Duration(seconds: 4),
             autoPlayAnimationDuration: const Duration(milliseconds: 800),
             autoPlayCurve: Curves.fastOutSlowIn,
-            enlargeCenterPage: false, // Disable enlarge since we're using full width
+            enlargeCenterPage: false,
             scrollDirection: Axis.horizontal,
           ),
           items: bannerImages.map((image) {
@@ -134,9 +155,7 @@ class HomeScreen extends StatelessWidget {
               builder: (BuildContext context) {
                 return Container(
                   width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.symmetric(
-                    horizontal: constraints.maxWidth < 600 ? 0 : 0, // No horizontal margin for full width
-                  ),
+                  margin: const EdgeInsets.symmetric(horizontal: 0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
@@ -170,8 +189,8 @@ class HomeScreen extends StatelessWidget {
         int crossAxisCount = constraints.maxWidth < 600 ? 2 : 4;
 
         return GridView.builder(
-          physics: const NeverScrollableScrollPhysics(), // Disable GridView's own scroll
-          shrinkWrap: true, // Important for nested scroll views
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
           itemCount: bestSellingProducts.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: crossAxisCount,
@@ -187,8 +206,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        ProductDetailScreen(product: product),
+                    builder: (context) => ProductDetailScreen(product: product),
                   ),
                 );
               },
