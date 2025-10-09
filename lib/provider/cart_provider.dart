@@ -5,14 +5,32 @@ import 'package:provider/provider.dart';
 class CartProvider extends ChangeNotifier {
   final List<Product> _cart = [];
   List<Product> get cart => _cart;
+
+  // Add product to cart with initial quantity 1 - KEEP YOUR METHOD NAME
   void toggleFavorite(Product product) {
-    if (_cart.contains(product)) {
-      for (Product element in _cart) {
-        element.quantity++;
-      }
+    // Check if product already exists in cart
+    final existingIndex = _cart.indexWhere((item) => item.name == product.name);
+    
+    if (existingIndex != -1) {
+      // If product exists, increase quantity
+      _cart[existingIndex].quantity++;
     } else {
-      _cart.add(product);
+      // If product doesn't exist, add with quantity 1
+      _cart.add(Product(
+        name: product.name,
+        category: product.category,
+        price: product.price,
+        description: product.description,
+        image: product.image,
+        quantity: 1, // Start with quantity 1
+      ));
     }
+    notifyListeners();
+  }
+
+  // Remove product from cart
+  void removeFromCart(int index) {
+    _cart.removeAt(index);
     notifyListeners();
   }
 
@@ -22,10 +40,12 @@ class CartProvider extends ChangeNotifier {
   }
 
   decrementQtn(int index) {
-    if (_cart[index].quantity <= 1) {
-      return;
+    if (_cart[index].quantity > 1) {
+      _cart[index].quantity--;
+    } else {
+      // If quantity is 1 and user decreases, remove from cart
+      removeFromCart(index);
     }
-    _cart[index].quantity--;
     notifyListeners();
   }
 
@@ -36,6 +56,14 @@ class CartProvider extends ChangeNotifier {
     }
     return total1;
   }
+
+  // Clear cart after order
+  void clearCart() {
+    _cart.clear();
+    notifyListeners();
+  }
+
+  bool get isCartEmpty => _cart.isEmpty;
 
   static CartProvider of(BuildContext context, {bool listen = true}) {
     return Provider.of<CartProvider>(context, listen: listen);
