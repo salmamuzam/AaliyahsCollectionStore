@@ -4,9 +4,7 @@ import 'package:aaliyahs_collection_estore/src/features/authentication/screens/s
 import 'package:flutter/material.dart';
 
 class LoginFooterWidget extends StatelessWidget {
-  const LoginFooterWidget({
-    super.key,
-  });
+  const LoginFooterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +17,15 @@ class LoginFooterWidget extends StatelessWidget {
           width: double.infinity,
           child: OutlinedButton(
             onPressed: () {
-                 Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SignupScreen()),
-                      );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SignupScreen()),
+              );
             },
-            child: Text(AaliyahSignup.toUpperCase(), style: TextStyle(
-                      fontWeight: FontWeight.bold)),
+            child: Text(
+              AaliyahSignup.toUpperCase(),
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       ],

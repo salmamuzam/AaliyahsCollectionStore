@@ -5,10 +5,10 @@ import 'package:aaliyahs_collection_estore/utils/validators/validator.dart';
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {
-  LoginForm({super.key});
+  const LoginForm({super.key});
 
   @override
-  _LoginFormState createState() => _LoginFormState();
+  State<LoginForm> createState() => _LoginFormState();
 }
 
 class _LoginFormState extends State<LoginForm> {
@@ -45,6 +45,7 @@ class _LoginFormState extends State<LoginForm> {
                 labelText: AaliyahPassword,
                 hintText: AaliyahPassword,
                 border: OutlineInputBorder(),
+
                 suffixIcon: IconButton(
                   onPressed: () {
                     setState(() {

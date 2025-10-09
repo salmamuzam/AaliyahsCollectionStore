@@ -17,17 +17,17 @@ class LoginHeaderWidget extends StatelessWidget {
           image: AssetImage(AaliyahWelcomeScreenImage),
           height: size.height * 0.2,
         ),
-        const SizedBox(height: AaliyahFormHeight - 20,),
+        const SizedBox(height: AaliyahFormHeight - 20),
         Text(
           AaliyahLoginTitle,
           style: Theme.of(context).textTheme.headlineLarge,
         ),
-        const SizedBox(height: AaliyahFormHeight - 20,),
+        const SizedBox(height: AaliyahFormHeight - 20),
         Text(
           AaliyahLoginSubTitle,
           style: Theme.of(context).textTheme.bodyLarge,
         ),
-        const SizedBox(height: AaliyahFormHeight - 20,),
+        const SizedBox(height: AaliyahFormHeight - 20),
       ],
     );
   }
