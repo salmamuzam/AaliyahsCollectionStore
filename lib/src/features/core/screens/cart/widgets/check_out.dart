@@ -66,12 +66,26 @@ AaliyahTotal, style: Theme.of(context).textTheme.bodyLarge?.copyWith(
           ],
         ),
         const SizedBox(height: 20,),
-        ElevatedButton(onPressed: () {}, 
+        ElevatedButton(onPressed: () {
+            final snackBar = SnackBar(
+            content: Text(
+              "Your Order has been Placed Successfully!",
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: isDarkMode ? AaliyahPrimaryColor : AaliyahLightColor,
+                fontWeight: FontWeight.bold,
+            
+              ),
+            ),
+            duration: const Duration(seconds: 1),
+          );
+
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        }, 
         style: ElevatedButton.styleFrom(
           backgroundColor: isDarkMode ? AaliyahPrimaryColor : AaliyahSecondaryColor,
           minimumSize: const Size(double.infinity, 55)
         ), child:  Text(
-          AaliyahCheckOut, style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+          AaliyahOrder, style: Theme.of(context).textTheme.bodyMedium?.copyWith(
             fontWeight: FontWeight.bold,
             color: isDarkMode ? AaliyahLightColor : AaliyahDarkColor,
           )

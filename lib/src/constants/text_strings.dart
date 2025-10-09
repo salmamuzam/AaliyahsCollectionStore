@@ -42,7 +42,7 @@ const String AaliyahCartTitle = "My Cart";
 
 const String AaliyahSubTotal = "Subtotal";
 const String AaliyahTotal = "Total";
-const String AaliyahCheckOut = "Checkout";
+const String AaliyahOrder = "Place Order";
 
 // Favorite Text
 
