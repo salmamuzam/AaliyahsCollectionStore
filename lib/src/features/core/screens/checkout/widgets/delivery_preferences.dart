@@ -1,6 +1,9 @@
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+// Android Time Picker
+// Aligns with Material 3 Design
+
 class DeliveryPreferencesSection extends StatelessWidget {
   final TimeOfDay? selectedTime;
   final CheckoutColors colors;
@@ -17,27 +20,31 @@ class DeliveryPreferencesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Time Selection Button
         SizedBox(
           width: double.infinity,
           child: ElevatedButton.icon(
             onPressed: onTimeSelected,
             icon: const Icon(Icons.access_time, color: Colors.white),
             label: Text(
-              selectedTime != null 
+              selectedTime != null
                   ? "Delivery Time: ${selectedTime!.format(context)}"
                   : "Select Delivery Time",
-              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: colors.primaryColor,
               padding: const EdgeInsets.symmetric(vertical: 16),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
             ),
           ),
         ),
         const SizedBox(height: 12),
-        
+
         // Selected time display
         if (selectedTime != null) _buildTimeConfirmation(context),
       ],
@@ -60,7 +67,10 @@ class DeliveryPreferencesSection extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             "Delivery time set to ${selectedTime!.format(context)}",
-            style: TextStyle(color: colors.textColor, fontWeight: FontWeight.w600),
+            style: TextStyle(
+              color: colors.textColor,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ],
       ),

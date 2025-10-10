@@ -2,6 +2,8 @@ import 'package:aaliyahs_collection_estore/src/features/core/models/category.dar
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+// This is the categories that is displayed on the home page
+
 class CategoryButton extends StatelessWidget {
   final Category category;
   final bool isSelected;
@@ -19,17 +21,14 @@ class CategoryButton extends StatelessWidget {
     final brightness = MediaQuery.platformBrightnessOf(context);
     final isDarkMode = brightness == Brightness.dark;
 
-    // Background color
     final backgroundColor = isDarkMode
         ? (isSelected ? AaliyahPrimaryColor : AaliyahSecondaryColor)
         : (isSelected ? AaliyahSecondaryColor : AaliyahPrimaryColor);
 
-    // Text color
     final textColor = isDarkMode
         ? (isSelected ? Colors.white : Colors.black)
         : (isSelected ? Colors.black : Colors.white);
 
-    // Border color
     final borderColor = isDarkMode ? Colors.white : Colors.black;
 
     return GestureDetector(
@@ -53,10 +52,7 @@ class CategoryButton extends StatelessWidget {
                 height: 20,
                 width: 15,
                 margin: const EdgeInsets.only(right: 2),
-                child: Image.asset(
-                  category.iconURL,
-                  fit: BoxFit.contain,
-                ),
+                child: Image.asset(category.iconURL, fit: BoxFit.contain),
               ),
               // Text
               Text(

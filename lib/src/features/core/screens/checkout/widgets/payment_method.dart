@@ -1,6 +1,9 @@
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+// Only cash on delivery option for now because card payment is out of the scope of my assignment
+// Plans to implement card payment using Stripe in MAD 2 Assignment
+
 class PaymentMethodSection extends StatelessWidget {
   final bool cashOnDelivery;
   final CheckoutColors colors;

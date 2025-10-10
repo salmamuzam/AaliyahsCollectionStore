@@ -8,6 +8,10 @@ import 'package:aaliyahs_collection_estore/src/features/authentication/screens/s
 import 'package:aaliyahs_collection_estore/utils/validators/validator.dart';
 import 'package:flutter/material.dart';
 
+// This is the profile page
+// Validation works if customer needs to update profile information
+// You can also click log out to go back to Login page as well
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -29,7 +33,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void initState() {
     super.initState();
 
-    // sample data
     _firstNameController.text = AaliyahProfileFname;
     _lastNameController.text = AaliyahProfileLname;
     _emailController.text = AaliyahProfileEmail;
@@ -135,7 +138,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     const SizedBox(height: AaliyahFormHeight - 20),
 
-                    // Password field with toggle
                     TextFormField(
                       controller: _passwordController,
                       obscureText: !_isPasswordVisible,
@@ -206,7 +208,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     const SizedBox(height: AaliyahFormHeight),
 
-                    // Delete & Sign Out buttons
                     Row(
                       children: [
                         Expanded(

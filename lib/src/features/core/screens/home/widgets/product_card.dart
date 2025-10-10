@@ -1,9 +1,9 @@
-//import 'package:aaliyahs_collection_estore/repository/product_repository.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/models/product.dart';
 import 'package:aaliyahs_collection_estore/provider/favorite_provider.dart';
+
+// This is the product card to display the images, and it's responsive
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -52,7 +52,7 @@ class ProductCard extends StatelessWidget {
                   context,
                 ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
               ),
-          
+
               InkWell(
                 borderRadius: BorderRadius.circular(30),
                 onTap: () {

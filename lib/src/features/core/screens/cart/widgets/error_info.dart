@@ -1,6 +1,9 @@
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+// Sometimes, I will remove this file
+// If I forgot to, please ignore this file, sir
+
 class ErrorInfo extends StatelessWidget {
   const ErrorInfo({
     super.key,
@@ -19,14 +22,13 @@ class ErrorInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    final isDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
     final screenWidth = MediaQuery.of(context).size.width;
     final isDesktop = screenWidth > 600;
-    
+
     return Container(
-      constraints: BoxConstraints(
-        maxWidth: isDesktop ? 400 : double.infinity,
-      ),
+      constraints: BoxConstraints(maxWidth: isDesktop ? 400 : double.infinity),
       alignment: Alignment.center,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,14 +36,11 @@ class ErrorInfo extends StatelessWidget {
         children: [
           Text(
             title,
-            style: Theme.of(context)
-                .textTheme
-                .headlineSmall!
-                .copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: isDarkMode ? AaliyahLightColor : AaliyahDarkColor,
-                  fontSize: isDesktop ? 32 : 24,
-                ),
+            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+              fontWeight: FontWeight.bold,
+              color: isDarkMode ? AaliyahLightColor : AaliyahDarkColor,
+              fontSize: isDesktop ? 32 : 24,
+            ),
           ),
           const SizedBox(height: 16),
           Text(
@@ -61,13 +60,17 @@ class ErrorInfo extends StatelessWidget {
                   onPressed: press,
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(
-                      isDesktop ? 200 : double.infinity, 
-                      isDesktop ? 56 : 48
+                      isDesktop ? 200 : double.infinity,
+                      isDesktop ? 56 : 48,
                     ),
-                    backgroundColor: isDarkMode ? AaliyahPrimaryColor : AaliyahSecondaryColor,
-                    foregroundColor: isDarkMode ? AaliyahLightColor : AaliyahDarkColor,
+                    backgroundColor: isDarkMode
+                        ? AaliyahPrimaryColor
+                        : AaliyahSecondaryColor,
+                    foregroundColor: isDarkMode
+                        ? AaliyahLightColor
+                        : AaliyahDarkColor,
                     shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(12))
+                      borderRadius: BorderRadius.all(Radius.circular(12)),
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
@@ -86,4 +89,3 @@ class ErrorInfo extends StatelessWidget {
     );
   }
 }
-

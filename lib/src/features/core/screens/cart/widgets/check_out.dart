@@ -4,6 +4,8 @@ import 'package:aaliyahs_collection_estore/src/features/core/screens/checkout/ch
 
 import 'package:flutter/material.dart';
 
+// Bottom Checkout Section in Cart Screen
+
 class CheckOutBox extends StatelessWidget {
   const CheckOutBox({super.key});
 
@@ -14,12 +16,12 @@ class CheckOutBox extends StatelessWidget {
     final isDesktop = screenWidth > 600;
     final isDarkMode = mediaQuery.platformBrightness == Brightness.dark;
     final provider = CartProvider.of(context);
-    
+
     return Container(
       width: screenWidth,
       decoration: BoxDecoration(
         color: isDarkMode ? AaliyahSecondaryColor : AaliyahPrimaryColor,
-        borderRadius: isDesktop 
+        borderRadius: isDesktop
             ? BorderRadius.circular(15)
             : const BorderRadius.only(
                 topRight: Radius.circular(30),
@@ -34,13 +36,17 @@ class CheckOutBox extends StatelessWidget {
         ],
       ),
       padding: const EdgeInsets.all(20),
-      child: isDesktop 
+      child: isDesktop
           ? _buildDesktopLayout(context, provider, isDarkMode)
           : _buildMobileLayout(context, provider, isDarkMode),
     );
   }
 
-  Widget _buildMobileLayout(BuildContext context, CartProvider provider, bool isDarkMode) {
+  Widget _buildMobileLayout(
+    BuildContext context,
+    CartProvider provider,
+    bool isDarkMode,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -67,23 +73,22 @@ class CheckOutBox extends StatelessWidget {
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
-            // NAVIGATE TO CHECKOUT SCREEN INSTEAD OF SHOWING SNACKBAR
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => const CheckoutScreen(),
-              ),
+              MaterialPageRoute(builder: (context) => const CheckoutScreen()),
             );
-          }, 
+          },
           style: ElevatedButton.styleFrom(
-            backgroundColor: isDarkMode ? AaliyahPrimaryColor : AaliyahSecondaryColor,
+            backgroundColor: isDarkMode
+                ? AaliyahPrimaryColor
+                : AaliyahSecondaryColor,
             minimumSize: const Size(double.infinity, 55),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
-          ), 
+          ),
           child: Text(
-            "Checkout", 
+            "Checkout",
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.bold,
               color: isDarkMode ? AaliyahLightColor : AaliyahDarkColor,
@@ -94,7 +99,11 @@ class CheckOutBox extends StatelessWidget {
     );
   }
 
-  Widget _buildDesktopLayout(BuildContext context, CartProvider provider, bool isDarkMode) {
+  Widget _buildDesktopLayout(
+    BuildContext context,
+    CartProvider provider,
+    bool isDarkMode,
+  ) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -107,23 +116,22 @@ class CheckOutBox extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            // NAVIGATE TO CHECKOUT SCREEN INSTEAD OF SHOWING SNACKBAR
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => const CheckoutScreen(),
-              ),
+              MaterialPageRoute(builder: (context) => const CheckoutScreen()),
             );
-          }, 
+          },
           style: ElevatedButton.styleFrom(
-            backgroundColor: isDarkMode ? AaliyahPrimaryColor : AaliyahSecondaryColor,
+            backgroundColor: isDarkMode
+                ? AaliyahPrimaryColor
+                : AaliyahSecondaryColor,
             minimumSize: const Size(200, 55),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
-          ), 
+          ),
           child: Text(
-            "Checkout", 
+            "Checkout",
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.bold,
               color: isDarkMode ? AaliyahLightColor : AaliyahDarkColor,

@@ -4,6 +4,8 @@ import 'package:aaliyahs_collection_estore/src/features/authentication/screens/l
 import 'package:aaliyahs_collection_estore/utils/validators/validator.dart';
 import 'package:flutter/material.dart';
 
+// Refactored Sign Up Form
+
 class SignUpFormWidget extends StatefulWidget {
   const SignUpFormWidget({super.key});
 

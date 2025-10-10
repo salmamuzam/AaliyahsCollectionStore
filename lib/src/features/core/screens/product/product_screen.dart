@@ -9,6 +9,9 @@ import 'package:aaliyahs_collection_estore/src/features/core/screens/product_det
 import 'package:aaliyahs_collection_estore/src/features/core/screens/home/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
+// This is the product screen. All the products are filtered by category
+// That means when you click on a category, let's say abaya, it will show abayas, so basically products specific for that category
+
 class ProductScreen extends StatefulWidget {
   final String? initialCategory;
 
@@ -25,14 +28,16 @@ class _ProductScreenState extends State<ProductScreen> {
   @override
   void initState() {
     super.initState();
-    // Set initial category based on parameter or default to first category
+
     final initialCategoryName = widget.initialCategory ?? categories[0].name;
     _setInitialCategory(initialCategoryName);
     _filterProducts(initialCategoryName);
   }
 
   void _setInitialCategory(String categoryName) {
-    final index = categories.indexWhere((category) => category.name == categoryName);
+    final index = categories.indexWhere(
+      (category) => category.name == categoryName,
+    );
     if (index != -1) {
       setState(() {
         isSelected = index;
@@ -57,27 +62,32 @@ class _ProductScreenState extends State<ProductScreen> {
     _filterProducts(categoryName);
   }
 
-  // MATERIAL 3 SHARED AXIS TRANSITION FOR PRODUCT DETAILS
   void _onProductTap(Product product) {
     Navigator.push(
       context,
       PageRouteBuilder(
-        transitionDuration: const Duration(milliseconds: 450), // Fast for e-commerce
-        reverseTransitionDuration: const Duration(milliseconds: 350), // Faster back
+        transitionDuration: const Duration(milliseconds: 450),
+        reverseTransitionDuration: const Duration(
+          // I made it a bit fast, so that response time is fast, because in reality humans do not like to wait long time when shopping
+          milliseconds: 350,
+        ),
         pageBuilder: (context, animation, secondaryAnimation) {
           return ProductDetailScreen(product: product);
         },
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          // MATERIAL 3 SHARED AXIS - HORIZONTAL
-          const begin = Offset(1.0, 0.0); // Slide from right
+          const begin = Offset(1.0, 0.0);
           const end = Offset.zero;
-          const curve = Curves.easeOutCubic; // Snappy curve
+          const curve = Curves.easeOutCubic;
 
-          var slideTween = Tween<Offset>(begin: begin, end: end)
-              .chain(CurveTween(curve: curve));
+          var slideTween = Tween<Offset>(
+            begin: begin,
+            end: end,
+          ).chain(CurveTween(curve: curve));
 
-          var fadeTween = Tween<double>(begin: 0.0, end: 1.0)
-              .chain(CurveTween(curve: curve));
+          var fadeTween = Tween<double>(
+            begin: 0.0,
+            end: 1.0,
+          ).chain(CurveTween(curve: curve));
 
           return SlideTransition(
             position: animation.drive(slideTween),
@@ -109,12 +119,12 @@ class _ProductScreenState extends State<ProductScreen> {
       ),
       body: Column(
         children: [
-          // Categories Section
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             child: LayoutBuilder(
               builder: (context, constraints) {
-                double buttonWidth = constraints.maxWidth / categories.length - 8;
+                double buttonWidth =
+                    constraints.maxWidth / categories.length - 8;
 
                 return Wrap(
                   alignment: WrapAlignment.spaceBetween,
@@ -136,7 +146,6 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
           ),
 
-          // Products Grid Section
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -153,7 +162,8 @@ class _ProductScreenState extends State<ProductScreen> {
     required String name,
     required VoidCallback onTap,
   }) {
-    final isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    final isDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
     final bool selected = isSelected == index;
 
     final Color backgroundColor = isDarkMode
@@ -175,10 +185,7 @@ class _ProductScreenState extends State<ProductScreen> {
         ),
         child: Text(
           name,
-          style: TextStyle(
-            color: textColor,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
       ),
@@ -213,7 +220,7 @@ class _ProductScreenState extends State<ProductScreen> {
             final product = filteredProducts[index];
             return ProductCard(
               product: product,
-              onPress: () => _onProductTap(product), // Uses Material 3 transition
+              onPress: () => _onProductTap(product),
             );
           },
         );

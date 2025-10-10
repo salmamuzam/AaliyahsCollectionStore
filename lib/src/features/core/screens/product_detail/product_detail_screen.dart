@@ -1,10 +1,10 @@
-//import 'package:aaliyahs_collection_estore/data/data.dart';
-
 import 'package:aaliyahs_collection_estore/src/features/core/models/product.dart';
 import 'package:aaliyahs_collection_estore/provider/favorite_provider.dart';
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/product_detail/widgets/add_button.dart';
 import 'package:flutter/material.dart';
+
+// This is the main screen of the product detail screen
 
 class ProductDetailScreen extends StatefulWidget {
   final Product product;
@@ -34,9 +34,12 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           onPressed: () {
             provider.toggleFavorite(widget.product);
           },
-          icon:  Icon(
-          provider.isExist(widget.product)?
-        Icons.favorite : Icons.favorite_outline, size: 25),
+          icon: Icon(
+            provider.isExist(widget.product)
+                ? Icons.favorite
+                : Icons.favorite_outline,
+            size: 25,
+          ),
         ),
       ],
     );

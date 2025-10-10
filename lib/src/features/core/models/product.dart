@@ -1,3 +1,5 @@
+// Stores the model for products
+
 class Product {
   String name;
   String category;

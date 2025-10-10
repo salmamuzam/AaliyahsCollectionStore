@@ -1,6 +1,8 @@
 import 'package:aaliyahs_collection_estore/src/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
+// This is a common widget which will be used in Login and Sign up Form
+
 class FormHeaderWidget extends StatelessWidget {
   const FormHeaderWidget({
     super.key,

@@ -8,10 +8,11 @@ import 'package:aaliyahs_collection_estore/src/features/core/screens/home/widget
 import 'package:aaliyahs_collection_estore/src/features/core/screens/home/widgets/product_card.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/product/product_screen.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/product_detail/product_detail_screen.dart';
-//import 'package:aaliyahs_collection_estore/src/features/core/screens/product_screen.dart';
-import 'package:aaliyahs_collection_estore/src/features/core/screens/profile/profile_screen.dart'; // Import ProfileScreen
+import 'package:aaliyahs_collection_estore/src/features/core/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
+// This is the main home screen
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -53,19 +54,15 @@ class HomeScreen extends StatelessWidget {
       children: [
         Text(
           "Aaliyah's Collection",
-          style: Theme.of(context)
-              .textTheme
-              .headlineLarge
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(
+            context,
+          ).textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.bold),
         ),
         GestureDetector(
           onTap: () {
-            // Navigate to ProfileScreen when profile image is tapped
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => const ProfileScreen(),
-              ),
+              MaterialPageRoute(builder: (context) => const ProfileScreen()),
             );
           },
           child: const CircleAvatar(
@@ -104,16 +101,14 @@ class HomeScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 2),
               child: CategoryButton(
-                category: category, 
+                category: category,
                 isSelected: index == 0,
                 onTap: () {
-                  // Navigate to ProductScreen with the selected category
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProductScreen(
-                        initialCategory: category.name,
-                      ),
+                      builder: (context) =>
+                          ProductScreen(initialCategory: category.name),
                     ),
                   );
                 },
@@ -124,6 +119,8 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  // Carousel Slider - I have updated the package in pubspec.yaml
 
   Widget _bannerCarousel(BuildContext context) {
     final List<String> bannerImages = [
@@ -139,7 +136,7 @@ class HomeScreen extends StatelessWidget {
         return CarouselSlider(
           options: CarouselOptions(
             height: carouselHeight,
-            aspectRatio: 16/9,
+            aspectRatio: 16 / 9,
             viewportFraction: 1.0,
             initialPage: 0,
             enableInfiniteScroll: true,
@@ -204,8 +201,8 @@ class HomeScreen extends StatelessWidget {
             return ProductCard(
               product: product,
               onPress: () {
-  _navigateToProductDetailWithMaterial3(context, product);
-},
+                _navigateToProductDetailWithMaterial3(context, product);
+              },
             );
           },
         );
@@ -213,37 +210,45 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  void _navigateToProductDetailWithMaterial3(BuildContext context, Product product) {
-  Navigator.push(
-    context,
-    PageRouteBuilder(
-      transitionDuration: const Duration(milliseconds: 450),
-      reverseTransitionDuration: const Duration(milliseconds: 350),
-      pageBuilder: (context, animation, secondaryAnimation) {
-        return ProductDetailScreen(product: product);
-      },
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        const begin = Offset(1.0, 0.0);
-        const end = Offset.zero;
-        const curve = Curves.easeOutCubic;
+  // This is basically shared element transition. This happens when you click a product and then it transitions smoothly to product detail page
+  void _navigateToProductDetailWithMaterial3(
+    BuildContext context,
+    Product product,
+  ) {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        transitionDuration: const Duration(milliseconds: 450),
+        reverseTransitionDuration: const Duration(milliseconds: 350),
+        pageBuilder: (context, animation, secondaryAnimation) {
+          return ProductDetailScreen(product: product);
+        },
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.easeOutCubic;
 
-        var slideTween = Tween<Offset>(begin: begin, end: end)
-            .chain(CurveTween(curve: curve));
+          var slideTween = Tween<Offset>(
+            begin: begin,
+            end: end,
+          ).chain(CurveTween(curve: curve));
 
-        var fadeTween = Tween<double>(begin: 0.0, end: 1.0)
-            .chain(CurveTween(curve: curve));
+          var fadeTween = Tween<double>(
+            begin: 0.0,
+            end: 1.0,
+          ).chain(CurveTween(curve: curve));
 
-        return SlideTransition(
-          position: animation.drive(slideTween),
-          child: FadeTransition(
-            opacity: animation.drive(fadeTween),
-            child: child,
-          ),
-        );
-      },
-    ),
-  );
-}
+          return SlideTransition(
+            position: animation.drive(slideTween),
+            child: FadeTransition(
+              opacity: animation.drive(fadeTween),
+              child: child,
+            ),
+          );
+        },
+      ),
+    );
+  }
 
   Widget _bestSellingTitle(BuildContext context) {
     return Text.rich(
@@ -251,9 +256,9 @@ class HomeScreen extends StatelessWidget {
         children: [
           TextSpan(
             text: AaliyahBestSellingTitle,
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
         ],
       ),

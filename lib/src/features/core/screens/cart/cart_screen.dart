@@ -8,6 +8,7 @@ import 'package:aaliyahs_collection_estore/src/features/core/screens/cart/widget
 import 'package:aaliyahs_collection_estore/src/features/core/screens/cart/widgets/error_info.dart';
 import 'package:flutter/material.dart';
 
+// Main Cart Screen
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -22,7 +23,6 @@ class _CartScreenState extends State<CartScreen> {
     final provider = CartProvider.of(context);
     final finalList = provider.cart;
 
-    // Quantity buttons
     Widget productQuantity(IconData icon, int index) {
       return GestureDetector(
         onTap: () {
@@ -75,7 +75,6 @@ class _CartScreenState extends State<CartScreen> {
   ) {
     return Stack(
       children: [
-        // Scrollable products list
         Padding(
           padding: const EdgeInsets.only(bottom: 140),
           child: ListView.builder(
@@ -217,7 +216,6 @@ class _CartScreenState extends State<CartScreen> {
           ),
         ),
 
-        // Checkout section positioned at bottom
         Positioned(bottom: 0, left: 0, right: 0, child: const CheckOutBox()),
       ],
     );
@@ -229,7 +227,6 @@ class _CartScreenState extends State<CartScreen> {
 
     provider.removeFromCart(index);
 
-    // Show success message
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text("${product.name} removed from cart"),
@@ -239,7 +236,6 @@ class _CartScreenState extends State<CartScreen> {
   }
 
   Widget _buildEmptyCart(BuildContext context) {
-    // final isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
     final screenWidth = MediaQuery.of(context).size.width;
     final isDesktop = screenWidth > 600;
 
@@ -257,10 +253,7 @@ class _CartScreenState extends State<CartScreen> {
               SizedBox(
                 width: isDesktop ? 300 : 250,
                 height: isDesktop ? 200 : 250,
-                child: Image.asset(
-                  emptyCartIllustration,
-                  fit: BoxFit.contain,
-                ),
+                child: Image.asset(emptyCartIllustration, fit: BoxFit.contain),
               ),
               const SizedBox(height: 40),
 

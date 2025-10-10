@@ -6,6 +6,8 @@ import 'package:aaliyahs_collection_estore/src/features/authentication/screens/l
 import 'package:aaliyahs_collection_estore/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 
+// Main Welcome Screen
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -34,7 +36,6 @@ class WelcomeScreen extends StatelessWidget {
                 Text(
                   AaliyahWelcomeTitle,
                   style: Theme.of(context).textTheme.headlineLarge,
-                  
                 ),
                 Text(
                   AaliyahWelcomeSubTitle,
@@ -53,12 +54,15 @@ class WelcomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const LoginScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
                       );
                     },
-                    child: Text(AaliyahLogin.toUpperCase(), style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    )),
+                    child: Text(
+                      AaliyahLogin.toUpperCase(),
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
                 SizedBox(width: 10),
@@ -67,14 +71,17 @@ class WelcomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const SignupScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => const SignupScreen(),
+                        ),
                       );
                     },
-                    child: Text(AaliyahSignup.toUpperCase(), style: TextStyle(
-                      fontWeight: FontWeight.bold)
+                    child: Text(
+                      AaliyahSignup.toUpperCase(),
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
-                )
               ],
             ),
           ],

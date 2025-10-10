@@ -1,4 +1,4 @@
-// App Image Strings
+// This file contains all the path to images and icons I have used throughout development
 
 // Welcome Screen Image
 
@@ -60,8 +60,10 @@ const String AaliyahDressImage2 =
 const String AaliyahDressImage3 =
     "assets/images/products/dresses/dazed_dress_sky.png";
 
-// Empty Cart SVG
+// Empty Cart Icon
 
-const emptyCartIllustration ="assets/images/cart.png";
+const emptyCartIllustration = "assets/images/cart/cart.png";
 
-const emptyFavoritesIllustration = "assets/images/wishlist.png";
+// Empty Favorites Icon
+
+const emptyFavoritesIllustration = "assets/images/wishlist/wishlist.png";

@@ -7,6 +7,8 @@ import 'package:aaliyahs_collection_estore/src/features/core/models/product.dart
 import 'package:aaliyahs_collection_estore/src/features/core/screens/cart/widgets/error_info.dart';
 import 'package:flutter/material.dart';
 
+// This is the page to store products which has been favorited
+
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});
 
@@ -22,7 +24,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
 
     final screenWidth = MediaQuery.of(context).size.width;
     final isDesktop = screenWidth > 600;
-    var isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    var isDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
@@ -75,25 +78,31 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       Text(
                         favoriteItem.name,
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              color: isDarkMode ? AaliyahDarkColor : AaliyahLightColor,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          color: isDarkMode
+                              ? AaliyahDarkColor
+                              : AaliyahLightColor,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const SizedBox(height: 5),
                       Text(
                         favoriteItem.category,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: isDarkMode ? AaliyahDarkColor : AaliyahLightColor,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          color: isDarkMode
+                              ? AaliyahDarkColor
+                              : AaliyahLightColor,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const SizedBox(height: 10),
                       Text(
                         "Rs. ${favoriteItem.price}",
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: isDarkMode ? AaliyahDarkColor : AaliyahLightColor,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          color: isDarkMode
+                              ? AaliyahDarkColor
+                              : AaliyahLightColor,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
@@ -110,7 +119,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                 },
                 icon: Icon(
                   Icons.delete,
-                  color: isDarkMode ? AaliyahPrimaryColor : AaliyahSecondaryColor,
+                  color: isDarkMode
+                      ? AaliyahPrimaryColor
+                      : AaliyahSecondaryColor,
                   size: 22,
                 ),
               ),
@@ -120,6 +131,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       },
     );
   }
+
+  // This is to show an empty favorites page if no products are added to wishlist
 
   Widget _buildEmptyFavorites(BuildContext context, bool isDesktop) {
     return SafeArea(
@@ -132,18 +145,16 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Illustration
               SizedBox(
                 width: isDesktop ? 300 : 250,
                 height: isDesktop ? 200 : 250,
                 child: Image.asset(
-                  emptyFavoritesIllustration, // <-- Use your empty favorite image here
+                  emptyFavoritesIllustration,
                   fit: BoxFit.contain,
                 ),
               ),
               const SizedBox(height: 40),
 
-              // Text Content
               ErrorInfo(
                 title: "No Favorites Yet!",
                 description:
@@ -152,7 +163,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                 press: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const BottomNavBar()),
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavBar(),
+                    ),
                   );
                 },
               ),

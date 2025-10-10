@@ -10,9 +10,7 @@ import 'package:aaliyahs_collection_estore/src/features/core/screens/checkout/wi
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// ============ COLOR MANAGEMENT ============
-
-// ============ MAIN CHECKOUT SCREEN ============
+// This is the main checkout screen
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
 
@@ -23,14 +21,12 @@ class CheckoutScreen extends StatefulWidget {
 class _CheckoutScreenState extends State<CheckoutScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  // Controllers
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
   final TextEditingController _cityController = TextEditingController();
   final TextEditingController _postalCodeController = TextEditingController();
 
-  // State
   String? _selectedProvince;
   TimeOfDay? _selectedTime;
   bool _cashOnDelivery = true;
@@ -222,7 +218,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     final TimeOfDay? picked = await showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
-      initialEntryMode: TimePickerEntryMode.dial, // Force circular dial
+      initialEntryMode: TimePickerEntryMode.dial,
       builder: (BuildContext context, Widget? child) {
         final brightness = MediaQuery.of(context).platformBrightness;
         final isDarkMode = brightness == Brightness.dark;
@@ -293,5 +289,3 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     });
   }
 }
-
-

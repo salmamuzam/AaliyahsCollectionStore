@@ -1,4 +1,7 @@
+// This file contains validations for login, signup, and checkout screen
 class AaliyahValidator {
+  // First Name
+
   static String? validateFirstName(String? value) {
     if (value == null || value.isEmpty) {
       return "First Name is required!";
@@ -10,6 +13,8 @@ class AaliyahValidator {
     return null;
   }
 
+  // Last name
+
   static String? validateLastName(String? value) {
     if (value == null || value.isEmpty) {
       return "Last Name is required!";
@@ -20,6 +25,8 @@ class AaliyahValidator {
     }
     return null;
   }
+
+  // Email
 
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
@@ -35,6 +42,8 @@ class AaliyahValidator {
 
     return null;
   }
+
+  // Password
 
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
@@ -64,6 +73,8 @@ class AaliyahValidator {
     return null;
   }
 
+  // Phone Number
+
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
       return 'Phone number is required';
@@ -77,12 +88,16 @@ class AaliyahValidator {
     return null;
   }
 
+  // For the provinces (Drop Down)
+
   static String? validateRequiredField(String? value) {
     if (value == null || value.isEmpty) {
       return 'This field is required';
     }
     return null;
   }
+
+  // Postal Code
 
   static String? validatePostalCode(String? value) {
     if (value == null || value.isEmpty) {

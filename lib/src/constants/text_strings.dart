@@ -1,4 +1,6 @@
-//Generic Text
+// This file contains text which I have displayed in different pages of my screens
+
+// Login and Signup Text
 
 const String AaliyahLogin = "Login";
 const String AaliyahSignup = "Signup";
@@ -43,7 +45,6 @@ const String AaliyahProductText = "Products";
 
 const String AaliyahCartTitle = "My Cart";
 
-
 // Check Out Box Text
 
 const String AaliyahSubTotal = "Subtotal";
@@ -67,4 +68,3 @@ const String AaliyahProfileFname = "Fathima";
 const String AaliyahProfileLname = "Aaliyah";
 const String AaliyahProfileEmail = "aaliyah@gmail.com";
 const String AaliyahProfilePassword = "Aaliyah2015*";
-

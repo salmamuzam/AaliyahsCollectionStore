@@ -4,6 +4,8 @@ import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
 import 'package:aaliyahs_collection_estore/utils/validators/validator.dart';
 import 'package:flutter/material.dart';
 
+// Refactored Login Form
+
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
 
@@ -12,7 +14,6 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  
   final _formKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController();

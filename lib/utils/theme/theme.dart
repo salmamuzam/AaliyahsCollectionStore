@@ -5,7 +5,7 @@ import 'package:aaliyahs_collection_estore/utils/theme/widget_themes/text_theme.
 import 'package:flutter/material.dart';
 
 class AaliyahAppTheme {
-  // To avoid creating instances
+  // This is a private constructor, I'm using to avoid creating instances
   AaliyahAppTheme._();
 
   static ThemeData lightTheme = ThemeData(

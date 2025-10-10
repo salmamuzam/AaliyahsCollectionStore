@@ -4,6 +4,8 @@ import 'package:aaliyahs_collection_estore/src/features/authentication/screens/l
 import 'package:aaliyahs_collection_estore/src/features/authentication/screens/login/widgets/login_header_widget.dart';
 import 'package:flutter/material.dart';
 
+// Main Login Screen
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 

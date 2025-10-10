@@ -3,6 +3,8 @@ import 'package:aaliyahs_collection_estore/src/constants/sizes.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
+// Refactored Login Header
+
 class LoginHeaderWidget extends StatelessWidget {
   const LoginHeaderWidget({super.key, required this.size});
 

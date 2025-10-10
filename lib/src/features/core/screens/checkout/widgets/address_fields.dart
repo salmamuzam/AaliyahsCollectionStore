@@ -2,6 +2,8 @@ import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:aaliyahs_collection_estore/utils/validators/validator.dart';
 import 'package:flutter/material.dart';
 
+// Address Fields for Checkout
+
 class AddressInfoFields extends StatelessWidget {
   final TextEditingController addressController;
   final TextEditingController cityController;
@@ -28,17 +30,19 @@ class AddressInfoFields extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Address Field
         TextFormField(
           controller: addressController,
           maxLines: 2,
           style: TextStyle(color: colors.textColor),
-          decoration: _buildInputDecoration("Street Address", Icons.home_outlined, colors),
+          decoration: _buildInputDecoration(
+            "Street Address",
+            Icons.home_outlined,
+            colors,
+          ),
           validator: AaliyahValidator.validateRequiredField,
         ),
         const SizedBox(height: 12),
 
-        // City and Postal Code
         if (isDesktop)
           Row(
             children: [
@@ -57,7 +61,6 @@ class AddressInfoFields extends StatelessWidget {
           ),
         const SizedBox(height: 12),
 
-        // Province Dropdown
         _buildProvinceDropdown(),
       ],
     );
@@ -67,7 +70,11 @@ class AddressInfoFields extends StatelessWidget {
     return TextFormField(
       controller: cityController,
       style: TextStyle(color: colors.textColor),
-      decoration: _buildInputDecoration("City", Icons.location_city_outlined, colors),
+      decoration: _buildInputDecoration(
+        "City",
+        Icons.location_city_outlined,
+        colors,
+      ),
       validator: AaliyahValidator.validateRequiredField,
     );
   }
@@ -77,7 +84,11 @@ class AddressInfoFields extends StatelessWidget {
       controller: postalCodeController,
       keyboardType: TextInputType.number,
       style: TextStyle(color: colors.textColor),
-      decoration: _buildInputDecoration("Postal Code", Icons.numbers_outlined, colors),
+      decoration: _buildInputDecoration(
+        "Postal Code",
+        Icons.numbers_outlined,
+        colors,
+      ),
       validator: AaliyahValidator.validatePostalCode,
     );
   }
@@ -89,14 +100,32 @@ class AddressInfoFields extends StatelessWidget {
       decoration: InputDecoration(
         labelText: "Select Province",
         labelStyle: TextStyle(color: colors.textColor.withOpacity(0.7)),
-        prefixIcon: Icon(Icons.map_outlined, color: colors.textColor.withOpacity(0.7)),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: colors.borderColor)),
-        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: colors.borderColor)),
-        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: colors.primaryColor, width: 2)),
+        prefixIcon: Icon(
+          Icons.map_outlined,
+          color: colors.textColor.withOpacity(0.7),
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: colors.borderColor),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: colors.borderColor),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: colors.primaryColor, width: 2),
+        ),
         filled: true,
         fillColor: colors.surfaceColor,
-        errorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Colors.red)),
-        focusedErrorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Colors.red, width: 2)),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: Colors.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: Colors.red, width: 2),
+        ),
       ),
       dropdownColor: colors.surfaceColor,
       icon: Icon(Icons.arrow_drop_down, color: colors.textColor),
@@ -111,19 +140,38 @@ class AddressInfoFields extends StatelessWidget {
     );
   }
 
-  InputDecoration _buildInputDecoration(String label, IconData icon, CheckoutColors colors) {
+  InputDecoration _buildInputDecoration(
+    String label,
+    IconData icon,
+    CheckoutColors colors,
+  ) {
     return InputDecoration(
       labelText: label,
       labelStyle: TextStyle(color: colors.textColor.withOpacity(0.7)),
       prefixIcon: Icon(icon, color: colors.textColor.withOpacity(0.7)),
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: colors.borderColor)),
-      enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: colors.borderColor)),
-      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: colors.primaryColor, width: 2)),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: colors.borderColor),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: colors.borderColor),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: colors.primaryColor, width: 2),
+      ),
       filled: true,
       fillColor: colors.surfaceColor,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      errorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Colors.red)),
-      focusedErrorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Colors.red, width: 2)),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: Colors.red),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: Colors.red, width: 2),
+      ),
       errorStyle: const TextStyle(color: Colors.red),
     );
   }

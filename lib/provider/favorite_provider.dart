@@ -2,6 +2,8 @@ import 'package:aaliyahs_collection_estore/src/features/core/models/product.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+// Favorite Functionality using Provider State Management Library
+
 class FavoriteProvider extends ChangeNotifier {
   final List<Product> _favorites = [];
   List<Product> get favorites => _favorites;

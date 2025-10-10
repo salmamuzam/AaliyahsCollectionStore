@@ -6,6 +6,8 @@ import 'package:aaliyahs_collection_estore/src/features/authentication/screens/s
 import 'package:aaliyahs_collection_estore/src/features/authentication/screens/signup/widgets/signup_form_widget.dart';
 import 'package:flutter/material.dart';
 
+// Main Sign Up Screen
+
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
 

@@ -4,6 +4,10 @@ import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
+// This is the add button that is on the product detail page
+// When you click, it shows a snackbar which says Successfully added
+// This product will be saved in cart page
+
 // ignore: must_be_immutable
 class AddButton extends StatefulWidget {
   final double width, height;
@@ -25,7 +29,7 @@ class _AddButtonState extends State<AddButton> {
   Widget build(BuildContext context) {
     final brightness = MediaQuery.platformBrightnessOf(context);
     final isDarkMode = brightness == Brightness.dark;
-    final provider = CartProvider.of(context); // move inside build
+    final provider = CartProvider.of(context);
 
     return Container(
       width: widget.width,
@@ -44,7 +48,6 @@ class _AddButtonState extends State<AddButton> {
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 color: isDarkMode ? AaliyahPrimaryColor : AaliyahLightColor,
                 fontWeight: FontWeight.bold,
-            
               ),
             ),
             duration: const Duration(seconds: 1),
@@ -52,7 +55,7 @@ class _AddButtonState extends State<AddButton> {
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
-     
+
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
