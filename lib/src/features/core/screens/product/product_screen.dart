@@ -57,11 +57,36 @@ class _ProductScreenState extends State<ProductScreen> {
     _filterProducts(categoryName);
   }
 
+  // MATERIAL 3 SHARED AXIS TRANSITION FOR PRODUCT DETAILS
   void _onProductTap(Product product) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => ProductDetailScreen(product: product),
+      PageRouteBuilder(
+        transitionDuration: const Duration(milliseconds: 450), // Fast for e-commerce
+        reverseTransitionDuration: const Duration(milliseconds: 350), // Faster back
+        pageBuilder: (context, animation, secondaryAnimation) {
+          return ProductDetailScreen(product: product);
+        },
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          // MATERIAL 3 SHARED AXIS - HORIZONTAL
+          const begin = Offset(1.0, 0.0); // Slide from right
+          const end = Offset.zero;
+          const curve = Curves.easeOutCubic; // Snappy curve
+
+          var slideTween = Tween<Offset>(begin: begin, end: end)
+              .chain(CurveTween(curve: curve));
+
+          var fadeTween = Tween<double>(begin: 0.0, end: 1.0)
+              .chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(slideTween),
+            child: FadeTransition(
+              opacity: animation.drive(fadeTween),
+              child: child,
+            ),
+          );
+        },
       ),
     );
   }
@@ -188,7 +213,7 @@ class _ProductScreenState extends State<ProductScreen> {
             final product = filteredProducts[index];
             return ProductCard(
               product: product,
-              onPress: () => _onProductTap(product),
+              onPress: () => _onProductTap(product), // Uses Material 3 transition
             );
           },
         );

@@ -3,6 +3,7 @@ import 'package:aaliyahs_collection_estore/repository/product_repository.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/models/category.dart';
 import 'package:aaliyahs_collection_estore/src/constants/image_strings.dart';
 import 'package:aaliyahs_collection_estore/src/constants/text_strings.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/models/product.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/home/widgets/category_button.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/home/widgets/product_card.dart';
 import 'package:aaliyahs_collection_estore/src/features/core/screens/product/product_screen.dart';
@@ -203,19 +204,46 @@ class HomeScreen extends StatelessWidget {
             return ProductCard(
               product: product,
               onPress: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ProductDetailScreen(product: product),
-                  ),
-                );
-              },
+  _navigateToProductDetailWithMaterial3(context, product);
+},
             );
           },
         );
       },
     );
   }
+
+  void _navigateToProductDetailWithMaterial3(BuildContext context, Product product) {
+  Navigator.push(
+    context,
+    PageRouteBuilder(
+      transitionDuration: const Duration(milliseconds: 450),
+      reverseTransitionDuration: const Duration(milliseconds: 350),
+      pageBuilder: (context, animation, secondaryAnimation) {
+        return ProductDetailScreen(product: product);
+      },
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1.0, 0.0);
+        const end = Offset.zero;
+        const curve = Curves.easeOutCubic;
+
+        var slideTween = Tween<Offset>(begin: begin, end: end)
+            .chain(CurveTween(curve: curve));
+
+        var fadeTween = Tween<double>(begin: 0.0, end: 1.0)
+            .chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(slideTween),
+          child: FadeTransition(
+            opacity: animation.drive(fadeTween),
+            child: child,
+          ),
+        );
+      },
+    ),
+  );
+}
 
   Widget _bestSellingTitle(BuildContext context) {
     return Text.rich(

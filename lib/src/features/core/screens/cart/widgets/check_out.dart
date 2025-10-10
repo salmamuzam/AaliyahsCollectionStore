@@ -1,5 +1,7 @@
 import 'package:aaliyahs_collection_estore/provider/cart_provider.dart';
 import 'package:aaliyahs_collection_estore/src/constants/colors.dart';
+import 'package:aaliyahs_collection_estore/src/features/core/screens/checkout/checkout_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class CheckOutBox extends StatelessWidget {
@@ -65,23 +67,13 @@ class CheckOutBox extends StatelessWidget {
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
-            final snackBar = SnackBar(
-              content: Text(
-                "Your Order has been Placed Successfully!",
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: isDarkMode ? AaliyahPrimaryColor : AaliyahLightColor,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              duration: const Duration(seconds: 3),
-              action: SnackBarAction(
-                label: 'OK',
-                onPressed: () {},
+            // NAVIGATE TO CHECKOUT SCREEN INSTEAD OF SHOWING SNACKBAR
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CheckoutScreen(),
               ),
             );
-
-            ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            provider.clearCart();
           }, 
           style: ElevatedButton.styleFrom(
             backgroundColor: isDarkMode ? AaliyahPrimaryColor : AaliyahSecondaryColor,
@@ -115,23 +107,13 @@ class CheckOutBox extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            final snackBar = SnackBar(
-              content: Text(
-                "Your Order has been Placed Successfully!",
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: isDarkMode ? AaliyahPrimaryColor : AaliyahLightColor,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              duration: const Duration(seconds: 3),
-              action: SnackBarAction(
-                label: 'OK',
-                onPressed: () {},
+            // NAVIGATE TO CHECKOUT SCREEN INSTEAD OF SHOWING SNACKBAR
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CheckoutScreen(),
               ),
             );
-
-            ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            provider.clearCart();
           }, 
           style: ElevatedButton.styleFrom(
             backgroundColor: isDarkMode ? AaliyahPrimaryColor : AaliyahSecondaryColor,
@@ -152,4 +134,3 @@ class CheckOutBox extends StatelessWidget {
     );
   }
 }
-
