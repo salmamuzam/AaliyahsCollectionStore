@@ -33,7 +33,7 @@ const String AaliyahBestSellingTitle = "Best Selling Products";
 
 // Add to Bag Button
 
-const String AaliyahAddBagBtn = "  Add to Bag";
+const String AaliyahAddBagBtn = "  Add to Cart";
 
 // Product Screen Text
 
@@ -42,6 +42,7 @@ const String AaliyahProductText = "Products";
 // Cart Screen Text
 
 const String AaliyahCartTitle = "My Cart";
+
 
 // Check Out Box Text
 
@@ -66,3 +67,4 @@ const String AaliyahProfileFname = "Fathima";
 const String AaliyahProfileLname = "Aaliyah";
 const String AaliyahProfileEmail = "aaliyah@gmail.com";
 const String AaliyahProfilePassword = "Aaliyah2015*";
+

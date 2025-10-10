@@ -57,7 +57,7 @@ class _AddButtonState extends State<AddButton> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
-              Icons.shopping_bag,
+              Icons.shopping_cart,
               color: isDarkMode ? AaliyahDarkColor : AaliyahLightColor,
             ),
             const SizedBox(width: 8),

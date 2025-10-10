@@ -53,7 +53,15 @@ const String AaliyahHijabImage3 =
 
 // Dresses
 
-const String AaliyahDressImage1 = "assets/images/products/dresses/bloom_dress_petal.png";
-const String AaliyahDressImage2 = "assets/images/products/dresses/bloom_dress_view.png";
-const String AaliyahDressImage3 = "assets/images/products/dresses/dazed_dress_sky.png";
+const String AaliyahDressImage1 =
+    "assets/images/products/dresses/bloom_dress_petal.png";
+const String AaliyahDressImage2 =
+    "assets/images/products/dresses/bloom_dress_view.png";
+const String AaliyahDressImage3 =
+    "assets/images/products/dresses/dazed_dress_sky.png";
 
+// Empty Cart SVG
+
+const emptyCartIllustration ="assets/images/cart.png";
+
+const emptyFavoritesIllustration = "assets/images/wishlist.png";

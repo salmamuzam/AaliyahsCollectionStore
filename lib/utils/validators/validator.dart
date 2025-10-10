@@ -63,4 +63,34 @@ class AaliyahValidator {
 
     return null;
   }
+
+  static String? validatePhoneNumber(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Phone number is required';
+    }
+    if (value.length < 10) {
+      return 'Phone number must be at least 10 digits';
+    }
+    if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
+      return 'Phone number must contain only numbers';
+    }
+    return null;
+  }
+
+  static String? validateRequiredField(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'This field is required';
+    }
+    return null;
+  }
+
+  static String? validatePostalCode(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Postal code is required';
+    }
+    if (!RegExp(r'^\d+$').hasMatch(value)) {
+      return 'Postal code must contain only numbers';
+    }
+    return null;
+  }
 }
